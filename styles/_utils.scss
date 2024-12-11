@@ -1,0 +1,141 @@
+.container {
+  margin-inline: auto;
+  height: auto;
+
+  &__section {
+    width: max(250px, 79.17vw);
+  }
+}
+.header--container {
+  height: var(--header-height);
+  @include mobile-s {
+    overflow: hidden;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: height 0.3s ease-in-out;
+    background-color: var(--color-dark);
+    &::after {
+      content: "";
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      box-shadow: inset 0 -13px 10px rgba(0, 0, 0, 1);
+    }
+    &:hover {
+      height: 150px;
+    }
+  }
+}
+.section--container {
+  position: relative;
+  padding-inline: clamp(10px, 5vw, 30px);
+  margin-inline: auto;
+  overflow: hidden;
+}
+.grid--container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  height: 56vw;
+  gap: 10px;
+  min-height: 62vh;
+  @include mobile {
+    grid-template-rows: auto 1fr auto 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  &__list {
+    padding: clamp(23px, 2.6vw, 50px);
+    position: absolute;
+    z-index: 2;
+    top: clamp(6px, 0.15vw, 25px);
+    left: 24px;
+    pointer-events: auto;
+    @include fluid-text(24, 12);
+    font-weight: 300;
+    line-height: 1.35;
+    color: #fffbf5;
+    text-transform: uppercase;
+  }
+  &__item {
+    position: relative;
+    a::before,
+    a::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      visibility: hidden;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+      transition-property: opacity, visibility;
+    }
+    a::before {
+      right: 100%;
+      width: 1.5em;
+      height: 7px;
+      background-image: url(../img/befor-active-link.svg);
+    }
+    a::after {
+      left: 100%;
+      width: 1.5em;
+      height: 5px;
+      background-image: url(../img/after-active-link.svg);
+    }
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+  @include mobile-s {
+    position: relative;
+    z-index: 0;
+  }
+}
+
+.is-active {
+  color: var(--color-accent);
+}
+.is-active > a:before,
+.is-active > a:after {
+  opacity: 1;
+  visibility: visible;
+}
