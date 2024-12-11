@@ -574,25 +574,13 @@ h4,
 .portfolio .animated-path {
   animation-delay: 0s;
 }
-@media (hover: hover) {
-  .portfolio:hover .portfolio__line {
-    display: block;
-    opacity: 1;
-    width: 100%;
-  }
-  .portfolio:hover .portfolio__video {
-    opacity: 1;
-  }
+.portfolio:hover .portfolio__line {
+  display: block;
+  opacity: 1;
+  width: 100%;
 }
-@media (hover: none) {
-  .portfolio:active .portfolio__line {
-    display: block;
-    opacity: 1;
-    width: 100%;
-  }
-  .portfolio:active .portfolio__video {
-    opacity: 1;
-  }
+.portfolio:hover .portfolio__video {
+  opacity: 1;
 }
 @media (max-width: 767px) {
   .portfolio {

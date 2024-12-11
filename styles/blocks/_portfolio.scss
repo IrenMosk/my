@@ -44,7 +44,7 @@
   .animated-path {
     animation-delay: 0s;
   }
-  @include hover {
+  &:hover {
     .portfolio__line {
       display: block;
       opacity: 1;
