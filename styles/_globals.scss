@@ -1,5 +1,6 @@
 * {
   transition: opacity 3s ease 5s;
+  user-select: none;
 }
 
 body {
@@ -48,7 +49,7 @@ h2,
   @include fluid-text(67, 48);
   letter-spacing: -.005em;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
   @include mobile-s {
     font-size: 36px;
   }
