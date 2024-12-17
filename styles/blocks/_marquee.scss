@@ -11,7 +11,7 @@
     white 80%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
   &__list {
     display: flex;
     gap: 30px;
@@ -61,13 +61,13 @@
   }
   &__img {
     display: block;
-    width: 100%;
+    max-width: 200%;
     aspect-ratio: 1;
     object-fit: cover;
     filter: grayscale(100%);
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
       filter 0.3s;
-    transform-origin: center center;
+    transform-origin: top right;
     @include mobile-s {
       height: 500px;
     }
@@ -96,28 +96,32 @@
   }
 }
 .lightbox {
-  
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  animation: rotateGradient 1s ease infinite;
   &__image {
     max-width: 90%;
     max-height: 90%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    object-fit: contain;
     border-radius: 5px;
+    filter: drop-shadow(0px 0px 185px var(--color-dark));
+    animation: filter-shadow 5s linear infinite;
+    pointer-events: none;
   }
 
   &__close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
+    top: 4.6vw;
+    right: 7.6vw;
+    font-size: 7vw;
     color: white;
     cursor: pointer;
   }
@@ -134,5 +138,14 @@
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
+  }
+}
+@keyframes filter-shadow {
+  
+  50% {
+    filter: drop-shadow(0px 0px 185px var(--color-accent-second));
+  }
+  90% {
+    filter: drop-shadow(0px 0px 185px var(--color-dark));
   }
 }
