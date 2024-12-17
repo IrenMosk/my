@@ -69,7 +69,7 @@
       filter 0.3s;
     transform-origin: top right;
     @include mobile-s {
-      height: 500px;
+      height: 400px;
     }
   }
   &__details {
@@ -104,7 +104,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   animation: rotateGradient 1s ease infinite;
   &__image {
     max-width: 90%;

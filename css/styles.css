@@ -956,7 +956,7 @@ h4,
 }
 @media (max-width: 425px) {
   .member__img {
-    height: 500px;
+    height: 400px;
   }
 }
 .member__details {
@@ -993,7 +993,7 @@ h4,
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   animation: rotateGradient 1s ease infinite;
 }
 .lightbox__image {
