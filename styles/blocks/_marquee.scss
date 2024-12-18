@@ -19,7 +19,7 @@
     will-change: transform;
     width: 11300px;
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 60s)
+    animation: scroll var(--_animation-duration, 80s)
       var(--_animation-direction, forwards) linear infinite;
       &[data-animation="paused"] {
         animation-play-state: paused; /* Остановить анимацию */

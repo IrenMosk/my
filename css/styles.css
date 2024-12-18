@@ -418,6 +418,12 @@ svg * {
 }
 @media (max-width: 767px) {
   .arrow {
+    top: 92%;
+    width: 10vw;
+  }
+}
+@media (max-width: 425px) {
+  .arrow {
     top: 95%;
     width: 12vw;
   }
@@ -442,6 +448,14 @@ svg * {
   left: 150%;
 }
 
+@media (max-width: 767px) {
+  .observe-video[data-visible=true] {
+    opacity: 1;
+  }
+  .observe-video[data-visible=false] {
+    opacity: 0;
+  }
+}
 * {
   transition: opacity 3s ease 5s;
   -webkit-user-select: none;
@@ -919,7 +933,7 @@ h4,
   will-change: transform;
   width: 11300px;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 60s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 80s) var(--_animation-direction, forwards) linear infinite;
 }
 .marquee__list[data-animation=paused] {
   animation-play-state: paused; /* Остановить анимацию */

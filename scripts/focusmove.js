@@ -2,37 +2,44 @@ function callback(records) {
   records.forEach((record) => {
     const video = record.target;
     if (record.isIntersecting) {
-      video.style.opacity = "1";
+      video.setAttribute("data-visible", "true");
       video.play();
     } else {
-      video.style.opacity = "0";
+      video.setAttribute("data-visible", "false");
       video.pause();
     }
   });
 }
 
 function initializeObserver() {
-  if (window.innerWidth < 768) {
-    const observer = new IntersectionObserver(callback, { threshold: 0.75 });
-    const videos = document.querySelectorAll(".observe-video"); // Находим видео с классом `observe-video`
+  const videos = document.querySelectorAll(".observe-video");
 
-    // Наблюдаем за каждым видео с указанным классом
-    videos.forEach((video) => observer.observe(video));
+  // Создаем наблюдатель только при ширине экрана < 768
 
-    return observer;
-  }
-  return null;
+  const observer = new IntersectionObserver(callback, { threshold: 0.98 });
+
+  // Настраиваем плавный переход для прозрачности и добавляем наблюдение
+  videos.forEach((video) => {
+    observer.observe(video);
+  });
+
+  return observer;
 }
 
-// Инициализация наблюдателя при загрузке
+// Инициализация наблюдателя
 let currentObserver = initializeObserver();
 
-// Обновляем наблюдатель при изменении размера окна
-window.addEventListener("resize", () => {
+// Функция для обновления наблюдателя при изменении размера окна
+function updateObserver() {
+  // Удаляем старый наблюдатель, если он существует
   if (currentObserver) {
     currentObserver.disconnect();
     currentObserver = null;
   }
 
+  // Создаем новый наблюдатель
   currentObserver = initializeObserver();
-});
+}
+
+// Обновляем наблюдатель при изменении размера окна
+window.addEventListener("resize", updateObserver);

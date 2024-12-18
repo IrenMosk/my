@@ -180,6 +180,10 @@
   }
 
   @include mobile {
+    top: 92%;
+    width: 10vw;
+  }
+  @include mobile-s {
     top: 95%;
     width: 12vw;
   }
@@ -201,3 +205,13 @@
 .arrow--next {
   left: 150%;
 }
+
+@include mobile {
+  .observe-video[data-visible="true"] {
+  opacity: 1; 
+}
+.observe-video[data-visible="false"] {
+  opacity: 0; 
+}
+}
+
