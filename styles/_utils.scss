@@ -168,7 +168,7 @@
   cursor: pointer;
   transition: transform 0.4s ease;
   background-color: transparent;
-  transition: left 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: left 1s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   svg {
     width: 90%;
     height: auto;
