@@ -55,9 +55,7 @@
       opacity: 1;
     }
   }
-  &:active {
-
-  }
+  
   @include mobile {
     min-height: 60vh;
     width: 115%;
