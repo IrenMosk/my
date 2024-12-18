@@ -46,7 +46,7 @@ h1,
 
 h2,
 .h2 {
-  @include fluid-text(67, 48);
+  @include fluid-text(85, 48);
   letter-spacing: -.005em;
   text-transform: uppercase;
   font-weight: 400;
@@ -86,11 +86,4 @@ h4,
   opacity: 1;
 } 
 
-@media (hover: none) {
-a:focus, button:focus, input:focus, textarea:focus,
-a:active, button:active, input:active, textarea:active {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
-  background-color: none;
-}
-}
+

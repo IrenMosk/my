@@ -1,22 +1,13 @@
 .characters {
   position: relative;
-  .content__title {
-    transform: translateX(-100%);
-    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-      background-position 0.5s ease;
-    background: var(--color-gradient);
-    background-size: 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-animation 2s infinite linear;
-  }
+  
   &[data-in-view="true"] {
     .slide__wrap::before {
       top: 100%;
       left: 100%;
     }
     .content__title {
-      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition: transform 0.6s 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       transform: translateX(0);
     }
     .arrow--prev {

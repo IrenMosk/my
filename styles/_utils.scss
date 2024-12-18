@@ -34,7 +34,7 @@
   }
 }
 .header--container:hover + .header__close {
-  left: 30px;
+  left: 20px;
 }
 
 .section--container {
@@ -150,7 +150,6 @@
 }
 
 .content--container {
-  
   padding-top: 50px;
   .content {
     margin: 5vh 0;
@@ -217,11 +216,11 @@
 
 @include mobile {
   .observe-video[data-visible="true"] {
-  opacity: 1; 
-}
-.observe-video[data-visible="false"] {
-  opacity: 0; 
-}
+    opacity: 1;
+  }
+  .observe-video[data-visible="false"] {
+    opacity: 0;
+  }
 }
 
 .lightbox {
@@ -242,11 +241,25 @@
     object-fit: contain;
     border-radius: 5px;
     animation: filter-shadow 5s linear infinite;
-    
+
     -webkit-mask: linear-gradient(
       0deg,
-      transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
-    mask: linear-gradient(0deg, transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
+      transparent,
+      rgba(255, 255, 255, 0.4) 5%,
+      white 20%,
+      white 80%,
+      rgba(255, 255, 255, 0.4) 95%,
+      transparent
+    );
+    mask: linear-gradient(
+      0deg,
+      transparent,
+      rgba(255, 255, 255, 0.4) 5%,
+      white 20%,
+      white 80%,
+      rgba(255, 255, 255, 0.4) 95%,
+      transparent
+    );
     pointer-events: none;
   }
 
@@ -260,10 +273,49 @@
   }
 }
 .lightbox[aria-hidden="true"] {
-    display: none;
+  display: none;
 }
 .lightbox[aria-hidden="false"] {
-    display: flex;
+  display: flex;
+}
 
+.content {
+  position: relative;
+  &__title {
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      background-position 0.5s ease;
+    background: var(--color-gradient);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 2s infinite linear;
   }
-
+  &__logo {
+    position: absolute;
+    top: 7%;
+    left: 90%;
+    width: 9vw;
+    height: 9vw;
+    z-index: 2;
+    @include mobile {
+      top: 12%;
+      left: 86%;
+      width: 12vw;
+      height: 12vw;
+    }
+    @include mobile-s {
+      top: 4%;
+      left: 80%;
+      width: 18vw;
+      height: 18vw;
+    }
+  }
+  .logo-path {
+    stroke: url(#color-text-gradient);
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: clamp(1px, 0.1vw, 3px);
+    animation: none;
+  }
+}
