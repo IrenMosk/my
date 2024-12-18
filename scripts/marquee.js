@@ -1,70 +1,54 @@
-const scrollers = document.querySelectorAll(".marquee");
-
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  addAnimation();
-}
-
-function addAnimation() {
-  scrollers.forEach((scroller) => {
-    scroller.setAttribute("data-animated", true);
-
-    const scrollerInner = scroller.querySelector(".marquee__list");
-    const scrollerContent = Array.from(scrollerInner.children);
-
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      duplicatedItem.setAttribute("aria-hidden", true);
-      scrollerInner.appendChild(duplicatedItem);
-    });
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".marquee");
-  const items = document.querySelectorAll(".marquee__item");
+  const list = container.querySelector(".marquee__list");
   const btnPrev = document.querySelector(".arrow--prev");
   const btnNext = document.querySelector(".arrow--next");
-  let animationDirection = "forwards"; // Текущее направление анимации
 
-  // Функция для смены направления
+  let animationDirection = "forwards"; // Начальное направление анимации
   function changeAnimationDirection(direction) {
     animationDirection = direction;
     container.style.setProperty("--_animation-direction", direction);
   }
 
-  // Обработчики кнопок
-  btnPrev.addEventListener("click", () => {
-    changeAnimationDirection("reverse"); // Меняем направление на обратное
-  });
+  // Функция остановки анимации
+  function pauseAnimation() {
+    list.setAttribute("data-animation", "paused"); // Остановить анимацию
+  }
 
-  btnNext.addEventListener("click", () => {
-    changeAnimationDirection("forwards"); // Меняем направление на прямое
-  });
+  // Функция возобновления анимации
+  function resumeAnimation() {
+    list.setAttribute("data-animation", "running"); // Запустить анимацию
+  }
 
-  let itemWidth = items[0].offsetWidth + 10; // Ширина элемента + gap
+  // Перестановка содержимого: переместить первый элемент в конец
+  function moveFirstToLast() {
+    const firstItem = list.firstElementChild;
+    list.appendChild(firstItem);
+  }
 
-  // Прокрутка вперед
+  // Перестановка содержимого: переместить последний элемент в начало
+  function moveLastToFirst() {
+    const lastItem = list.lastElementChild;
+    list.prepend(lastItem);
+  }
+
+  // Обработчик кнопки "вперед"
   function scrollToNext() {
-    container.scrollBy({
-      left: itemWidth, // Прокрутка вправо на ширину одного элемента
-      behavior: "smooth",
-    });
+    pauseAnimation(); // Остановить анимацию
+    moveFirstToLast(); // Переместить первый элемент в конец
+    changeAnimationDirection("forwards");
+    resumeAnimation(); // Сразу возобновить анимацию
   }
 
-  // Прокрутка назад
+  // Обработчик кнопки "назад"
   function scrollToPrev() {
-    container.scrollBy({
-      left: -itemWidth, // Прокрутка влево на ширину одного элемента
-      behavior: "smooth",
-    });
+    pauseAnimation(); // Остановить анимацию
+    moveLastToFirst(); // Переместить последний элемент в начало
+    changeAnimationDirection("reverse");
+    resumeAnimation(); // Сразу возобновить анимацию
   }
 
-  // Обработчики кнопок
+  // Подключение обработчиков событий к кнопкам
   btnNext.addEventListener("click", scrollToNext);
   btnPrev.addEventListener("click", scrollToPrev);
-
-  // Обновление ширины элемента при изменении размера окна
-  window.addEventListener("resize", () => {
-    itemWidth = items[0].offsetWidth + 10; // Пересчет ширины элемента
-  });
 });

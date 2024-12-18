@@ -54,4 +54,14 @@
   --font-size--x-large: 42px;
 
   --header-height: clamp(60px, 8.46vw, 124px);
+  --item-width: 25vw;
+  --item-koeff: 4;
+  @include tablet {
+    --item-width: 44vw;
+    --item-koeff: 2.3;
+  }
+  @include mobile-s {
+    --item-width: 93.75vw;
+    --item-koeff: 1;
+  }
 }

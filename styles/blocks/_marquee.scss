@@ -1,5 +1,5 @@
 .marquee {
-  padding-block: 50px;
+  padding-block: min(10.47vw, 60px);
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -17,10 +17,17 @@
     gap: 30px;
     transition: transform 0.3s ease-in-out;
     will-change: transform;
-    width: max-content;
+    width: 11300px;
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 60s)
+    animation: scroll var(--_animation-duration, 20s)
       var(--_animation-direction, forwards) linear infinite;
+      &[data-animation="paused"] {
+        animation-play-state: paused; /* Остановить анимацию */
+      }
+      
+      &[data-animation="running"] {
+        animation-play-state: running; /* Возобновить анимацию */
+      }
     &:hover {
       animation-play-state: paused;
     }
@@ -28,16 +35,13 @@
 
   &__item {
     position: relative;
-    width: clamp(300px, 34.72vw, 600px);
+    width: var(--item-width);
     aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    flex: 0 0 auto;
     overflow: hidden;
-    @include mobile {
-      aspect-ratio: auto;
-    }
   }
 }
 
@@ -61,13 +65,14 @@
   }
   &__img {
     display: block;
-    max-width: 200%;
+    max-width: 150%;
+    height: fit-content;
     aspect-ratio: 1;
     object-fit: cover;
     filter: grayscale(100%);
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
       filter 0.3s;
-    transform-origin: top right;
+    transform-origin: center center;
     @include mobile-s {
       height: 400px;
     }
@@ -112,8 +117,12 @@
     width: 90%;
     object-fit: contain;
     border-radius: 5px;
-    filter: drop-shadow(0px 0px 185px var(--color-dark));
     animation: filter-shadow 5s linear infinite;
+    
+    -webkit-mask: linear-gradient(
+      0deg,
+      transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
+    mask: linear-gradient(0deg, transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
     pointer-events: none;
   }
 
@@ -121,7 +130,7 @@
     position: absolute;
     top: 4.6vw;
     right: 7.6vw;
-    font-size: 7vw;
+    @include fluid-text(14, 52);
     color: white;
     cursor: pointer;
   }
@@ -136,16 +145,12 @@
 
  
 @keyframes scroll {
+  from {
+    transform: translate(0);
+  }
   to {
-    transform: translate(calc(-50% - 0.5rem));
+    transform: translate(calc((-19.78 + var(--item-koeff))*var(--item-width)));
   }
 }
-@keyframes filter-shadow {
-  
-  50% {
-    filter: drop-shadow(0px 0px 185px var(--color-accent-second));
-  }
-  90% {
-    filter: drop-shadow(0px 0px 185px var(--color-dark));
-  }
-}
+
+

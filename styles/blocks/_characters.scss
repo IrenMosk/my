@@ -22,13 +22,13 @@
     .arrow--prev {
       left: calc(90% - 3%);
       @include mobile {
-        left: 40%;
+        left: 35%;
       }
     }
     .arrow--next {
       left: calc(90% + 3%);
       @include mobile {
-        left: 50%;
+        left: 55%;
       }
     }
   }
