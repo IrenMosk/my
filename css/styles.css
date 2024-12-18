@@ -413,8 +413,18 @@ svg * {
   width: 90%;
   height: auto;
 }
-.arrow:hover svg {
-  transform: scale(1.2);
+@media (hover: hover) {
+  .arrow:hover svg {
+    transform: scale(1.2);
+  }
+}
+@media (hover: none) {
+  .arrow:active svg {
+    transform: scale(1.2);
+  }
+}
+.arrow:active svg {
+  filter: brightness(1.5);
 }
 @media (max-width: 767px) {
   .arrow {

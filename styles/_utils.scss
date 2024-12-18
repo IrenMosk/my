@@ -173,9 +173,14 @@
     width: 90%;
     height: auto;
   }
-  &:hover {
+  @include hover {
     svg {
       transform: scale(1.2);
+    }
+  }
+  &:active {
+    svg {
+      filter: brightness(1.5);
     }
   }
 
