@@ -16,7 +16,7 @@ function initializeObserver() {
 
   // Создаем наблюдатель только при ширине экрана < 768
 
-  const observer = new IntersectionObserver(callback, { threshold: 0.98 });
+  const observer = new IntersectionObserver(callback, { threshold: 0.95 });
 
   // Настраиваем плавный переход для прозрачности и добавляем наблюдение
   videos.forEach((video) => {

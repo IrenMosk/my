@@ -434,8 +434,8 @@ svg * {
 }
 @media (max-width: 425px) {
   .arrow {
-    top: 95%;
-    width: 12vw;
+    top: 93%;
+    width: 13vw;
   }
 }
 
@@ -466,6 +466,47 @@ svg * {
     opacity: 0;
   }
 }
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  animation: rotateGradient 1s ease infinite;
+}
+.lightbox__image {
+  max-width: 90%;
+  max-height: 90%;
+  width: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 5px;
+  animation: filter-shadow 5s linear infinite;
+  -webkit-mask: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.4) 5%, white 20%, white 80%, rgba(255, 255, 255, 0.4) 95%, transparent);
+  mask: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.4) 5%, white 20%, white 80%, rgba(255, 255, 255, 0.4) 95%, transparent);
+  pointer-events: none;
+}
+.lightbox__close {
+  position: absolute;
+  top: 4.6vw;
+  right: 7.6vw;
+  font-size: clamp(52px, 0.9722222222vw, 14px);
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox[aria-hidden=true] {
+  display: none;
+}
+
+.lightbox[aria-hidden=false] {
+  display: flex;
+}
+
 * {
   transition: opacity 3s ease 5s;
   -webkit-user-select: none;
@@ -767,18 +808,30 @@ h4,
 .portfolio .animated-path {
   animation-delay: 0s;
 }
-.portfolio:hover .portfolio__line {
-  display: block;
-  opacity: 1;
-  width: 100%;
+@media (hover: hover) {
+  .portfolio:hover .portfolio__line {
+    display: block;
+    opacity: 1;
+    width: 100%;
+  }
+  .portfolio:hover .portfolio__video {
+    opacity: 1;
+  }
 }
-.portfolio:hover .portfolio__video {
-  opacity: 1;
+@media (hover: none) {
+  .portfolio:active .portfolio__line {
+    display: block;
+    opacity: 1;
+    width: 100%;
+  }
+  .portfolio:active .portfolio__video {
+    opacity: 1;
+  }
 }
 @media (max-width: 767px) {
   .portfolio {
-    min-height: 70vw;
-    width: 100%;
+    min-height: 60vh;
+    width: 115%;
   }
 }
 
@@ -928,7 +981,7 @@ h4,
 }
 
 .marquee {
-  padding-block: min(10.47vw, 60px);
+  padding-block: min(14.47vw, 60px);
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -1022,47 +1075,6 @@ h4,
   margin: 0;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.9);
-  animation: rotateGradient 1s ease infinite;
-}
-.lightbox__image {
-  max-width: 90%;
-  max-height: 90%;
-  width: 90%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border-radius: 5px;
-  animation: filter-shadow 5s linear infinite;
-  -webkit-mask: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.4) 5%, white 20%, white 80%, rgba(255, 255, 255, 0.4) 95%, transparent);
-  mask: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.4) 5%, white 20%, white 80%, rgba(255, 255, 255, 0.4) 95%, transparent);
-  pointer-events: none;
-}
-.lightbox__close {
-  position: absolute;
-  top: 4.6vw;
-  right: 7.6vw;
-  font-size: clamp(52px, 0.9722222222vw, 14px);
-  color: white;
-  cursor: pointer;
-}
-
-.lightbox[aria-hidden=true] {
-  display: none;
-}
-
-.lightbox[aria-hidden=false] {
-  display: flex;
 }
 
 @keyframes scroll {

@@ -1,5 +1,5 @@
 .marquee {
-  padding-block: min(10.47vw, 60px);
+  padding-block: min(14.47vw, 60px);
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -100,48 +100,7 @@
     color: rgba(255, 255, 255, 0.5);
   }
 }
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.9);
-  animation: rotateGradient 1s ease infinite;
-  &__image {
-    max-width: 90%;
-    max-height: 90%;
-    width: 90%;
-    object-fit: contain;
-    border-radius: 5px;
-    animation: filter-shadow 5s linear infinite;
-    
-    -webkit-mask: linear-gradient(
-      0deg,
-      transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
-    mask: linear-gradient(0deg, transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
-    pointer-events: none;
-  }
 
-  &__close {
-    position: absolute;
-    top: 4.6vw;
-    right: 7.6vw;
-    @include fluid-text(14, 52);
-    color: white;
-    cursor: pointer;
-  }
-}
-.lightbox[aria-hidden="true"] {
-    display: none;
-}
-.lightbox[aria-hidden="false"] {
-    display: flex;
-
-  }
 
  
 @keyframes scroll {
