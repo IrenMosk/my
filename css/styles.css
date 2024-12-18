@@ -253,8 +253,12 @@ svg * {
     box-shadow: inset 0 -13px 10px rgb(0, 0, 0);
   }
   .header--container:hover {
-    height: 100px;
+    height: 120px;
   }
+}
+
+.header--container:hover + .header__close {
+  left: 30px;
 }
 
 .section--container {
@@ -598,12 +602,16 @@ h4,
   opacity: 1;
 }
 
-a:focus, button:focus, input:focus, textarea:focus {
-  outline: transparent;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+@media (hover: none) {
+  a:focus, button:focus, input:focus, textarea:focus,
+  a:active, button:active, input:active, textarea:active {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+    background-color: none;
+  }
 }
-
 .header {
+  position: fixed;
   max-width: 1920px;
   display: flex;
   margin-inline: auto;
@@ -628,6 +636,23 @@ a:focus, button:focus, input:focus, textarea:focus {
   .header {
     height: 50px;
   }
+}
+
+.header__close {
+  position: fixed;
+  top: 110px;
+  left: -50px;
+  background: none;
+  color: var(--color-accent);
+  z-index: 2;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  padding: 5px;
+  transition: left 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.header__close:active {
+  left: -50px;
 }
 
 @keyframes flicker {

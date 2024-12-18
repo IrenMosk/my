@@ -85,7 +85,12 @@ h4,
   visibility: visible;
   opacity: 1;
 } 
-a:focus, button:focus, input:focus, textarea:focus {
-  outline: transparent;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5)
+
+@media (hover: none) {
+a:focus, button:focus, input:focus, textarea:focus,
+a:active, button:active, input:active, textarea:active {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+  background-color: none;
+}
 }

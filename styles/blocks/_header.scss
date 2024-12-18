@@ -1,72 +1,94 @@
 .header {
-    max-width: 1920px;
-    display: flex;
-    margin-inline: auto;
-    flex-wrap: nowrap;
-    &__logo {
-        margin-left: auto;
-        padding: 1.29vw 1.67vw;
-        svg {
-            width: clamp(70px, 7.94vw, 140px);
-            height: auto;
-        }
+  position: fixed;
+  max-width: 1920px;
+  display: flex;
+  margin-inline: auto;
+  flex-wrap: nowrap;
+  &__logo {
+    margin-left: auto;
+    padding: 1.29vw 1.67vw;
+    svg {
+      width: clamp(70px, 7.94vw, 140px);
+      height: auto;
     }
-    .logo-path {
-        stroke: url(#color-text-gradient);
-        stroke-linecap: round;
-        fill: none;
-        stroke-width: clamp(12px, 1.18vw, 17px);
-        animation: flicker 2s infinite, color-change 1s infinite;
-      }
-      @include mobile-s {
-        height: 50px;
-      }
+  }
+  .logo-path {
+    stroke: url(#color-text-gradient);
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: clamp(12px, 1.18vw, 17px);
+    animation: flicker 2s infinite, color-change 1s infinite;
+  }
+  
+  @include mobile-s {
+    height: 50px;
+  }
+  
 }
+.header__close {
+  position: fixed;
+  top: 110px;
+  left: -50px;
+  background: none;
+  color: var(--color-accent);
+  z-index: 2;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  padding: 5px;
+  transition: left 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  &:active {
+    left:-50px;
+  }
+}
+
+
+
 @keyframes flicker {
-    0% {
-      stroke-dashoffset: 700; 
-      opacity: 1;
-    }
-    50% {
-      stroke-dashoffset: 0; 
-      opacity: 0.5;
-    }
-    100% {
-      stroke-dashoffset: 700; 
-      opacity: 1;
-    }
+  0% {
+    stroke-dashoffset: 700;
+    opacity: 1;
   }
-  @keyframes color-change {
-    0% {
-      stroke: url(#color-text-gradient); 
-      opacity: 1;
-    }
-    20% {
-      stroke: #00fff2; 
-    }
-    30% {
-        stroke: #ff00cc; 
-        opacity: 0.5;
-      }
-      40% {
-        stroke: #ccff00; 
-      }
-      50% {
-        stroke: url(#color-text-gradient); 
-        opacity: 1;
-      }
-      60% {
-          stroke: #ff00cc; 
-        }
-        75% {
-          stroke: #ccff00; 
-          opacity: 0.5;
-        }
-        90% {
-          stroke: #00fff2; 
-        }
-    100% {
-      stroke: url(#color-text-gradient); 
-      opacity: 1;
-    }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
   }
+  100% {
+    stroke-dashoffset: 700;
+    opacity: 1;
+  }
+}
+@keyframes color-change {
+  0% {
+    stroke: url(#color-text-gradient);
+    opacity: 1;
+  }
+  20% {
+    stroke: #00fff2;
+  }
+  30% {
+    stroke: #ff00cc;
+    opacity: 0.5;
+  }
+  40% {
+    stroke: #ccff00;
+  }
+  50% {
+    stroke: url(#color-text-gradient);
+    opacity: 1;
+  }
+  60% {
+    stroke: #ff00cc;
+  }
+  75% {
+    stroke: #ccff00;
+    opacity: 0.5;
+  }
+  90% {
+    stroke: #00fff2;
+  }
+  100% {
+    stroke: url(#color-text-gradient);
+    opacity: 1;
+  }
+}
