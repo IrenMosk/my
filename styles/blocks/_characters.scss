@@ -1,5 +1,21 @@
 .characters {
   position: relative;
+  .content__title-wrapper {
+  overflow: visible;  
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: -50%;
+    left: -25%;
+    width: 150%;
+    height: 700%;
+    opacity: 0.7;
+    background: url(../img/decor-svg.svg) center/cover no-repeat;
+  }
+  
+  }
   
   &[data-in-view="true"] {
     .slide__wrap::before {

@@ -4,6 +4,9 @@
   white-space: nowrap;
   position: relative;
   width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
@@ -11,7 +14,7 @@
     white 80%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, rgba(255,255,255, 0.4) 5%, white 20%, white 80%, rgba(255,255,255, 0.4) 95%, transparent);
+  mask: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.93) 6%, white 50% rgba(0, 0, 0, 0.93) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
   &__list {
     display: flex;
     gap: 30px;
@@ -34,6 +37,7 @@
   }
 
   &__item {
+    
     position: relative;
     width: var(--item-width);
     aspect-ratio: 1;
@@ -42,6 +46,7 @@
     justify-content: center;
     flex: 0 0 auto;
     overflow: hidden;
+    
   }
 }
 
@@ -64,12 +69,13 @@
     margin: 0;
   }
   &__img {
+    
     display: block;
     max-width: 150%;
     height: fit-content;
     aspect-ratio: 1;
     object-fit: cover;
-    filter: grayscale(100%);
+    filter: grayscale(10%);
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
       filter 0.3s;
     transform-origin: center center;
