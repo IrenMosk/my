@@ -22,6 +22,14 @@
   @include mobile-s {
     height: 50px;
   }
+  @include desktop-above {
+    max-width: 2500px;
+    height: 200px;
+    &__logo svg {
+        width: 250px;
+      }    
+    
+  }
   
 }
 .header__close {

@@ -30,6 +30,13 @@
     @include mobile-s {
       grid-template-columns: repeat(4, 1fr);
     }
+    @include desktop-above {
+        grid-template-columns: repeat(12, 1fr); 
+    }
+  }
+  @include desktop-above {
+    padding-top: 150px;
+    width: 95vw;
   }
 
   &__image {
@@ -72,29 +79,13 @@
     grid-row-end: span 3;
     grid-column-end: span 2;
   }
-}
-@keyframes small {
-  0% {
-    transform: scale(3.0625);
-    z-index: 2;
-    opacity: 0;
+  .img-2x3 {
+    grid-row-end: span 2;
+    grid-column-start: span 3;
   }
-  99% {
-    z-index: 2;
-    transform: scale(1);
-  }
-  100% {
-    z-index: 1;
-    opacity: 1;
+  .img-4x6 {
+    grid-row-end: span 4;
+    grid-column-start: span 6;
   }
 }
-@keyframes big {
-  0% {
-    transform: scale(1);
-    z-index: 2;
-  }
-  100% {
-    z-index: 2;
-    transform: scale(1.5);
-  }
-}
+

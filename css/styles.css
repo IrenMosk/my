@@ -212,7 +212,7 @@ svg * {
   --font-size--x-large: 42px;
   --header-height: clamp(60px, 8.46vw, 124px);
   --item-width: 25vw;
-  --item-koeff: 4;
+  --item-koeff: 4.8;
 }
 @media (max-width: 1023px) {
   :root {
@@ -224,6 +224,12 @@ svg * {
   :root {
     --item-width: 93.75vw;
     --item-koeff: 1;
+  }
+}
+@media (min-width: 1920px) {
+  :root {
+    --item-width: 25.15vw;
+    --item-koeff: 5;
   }
 }
 
@@ -291,6 +297,11 @@ svg * {
     justify-items: center;
     height: auto;
     max-height: 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .grid--container {
+    height: 80vh;
   }
 }
 
@@ -386,6 +397,11 @@ svg * {
     left: 19px;
   }
 }
+@media (min-width: 1920px) {
+  .nav__list {
+    font-size: 40px;
+  }
+}
 
 .is-active {
   color: var(--color-accent);
@@ -440,14 +456,14 @@ svg * {
 }
 @media (max-width: 767px) {
   .arrow {
-    top: 92%;
-    width: 10vw;
+    top: max(379px, 21%);
+    width: 8vw;
   }
 }
 @media (max-width: 425px) {
   .arrow {
-    top: 93%;
-    width: 13vw;
+    top: 13%;
+    width: 10vw;
   }
 }
 
@@ -491,9 +507,9 @@ svg * {
   animation: rotateGradient 1s ease infinite;
 }
 .lightbox__image {
-  max-width: 90%;
-  max-height: 90%;
-  width: 90%;
+  max-width: 98%;
+  max-height: 98%;
+  width: 98%;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 5px;
@@ -533,26 +549,20 @@ svg * {
 }
 .content__logo {
   position: absolute;
-  top: 7%;
-  left: 90%;
-  width: 9vw;
-  height: 9vw;
-  z-index: 2;
+  top: -17.18vw;
+  left: 74%;
+  width: min(20vw, 380px);
+  height: min(20vw, 380px);
+  z-index: 0;
 }
-@media (max-width: 767px) {
+@media (min-width: 1920px) {
   .content__logo {
-    top: 12%;
-    left: 86%;
-    width: 12vw;
-    height: 12vw;
+    left: 81%;
   }
 }
 @media (max-width: 425px) {
   .content__logo {
-    top: 4%;
-    left: 80%;
-    width: 18vw;
-    height: 18vw;
+    top: -8.18vw;
   }
 }
 .content .logo-path {
@@ -594,21 +604,29 @@ svg * {
   overflow: hidden;
   z-index: 2;
   overflow: visible;
-  animation: fill-text 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+}
+@media (min-width: 1920px) {
+  .animated-text {
+    font-size: 70px;
+  }
 }
 
 .animated-text::after {
   content: attr(data-text);
   position: absolute;
   top: 100%;
-  left: 60%;
+  left: 40vw;
   transform: rotate(3deg);
   width: 0;
   height: 100%;
   background: var(--color-gradient);
-  animation: bright 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
   -webkit-background-clip: text;
   background-clip: text;
+}
+@media (max-width: 425px) {
+  .animated-text::after {
+    left: 10vw;
+  }
 }
 
 @keyframes fill-text {
@@ -619,7 +637,7 @@ svg * {
     filter: blur(0px);
   }
   95% {
-    filter: blur(3px);
+    filter: blur(8px);
   }
   100% {
     filter: blur(0.2px);
@@ -658,6 +676,8 @@ body {
   letter-spacing: -0.05em;
   color: var(--color-light-text);
   background-color: var(--color-dark);
+  -webkit-mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+  mask: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 2%, white 5%, white 95%, rgba(0, 0, 0, 0.4) 98%, transparent);
 }
 
 a,
@@ -690,6 +710,12 @@ h1,
     font-size: 48px;
   }
 }
+@media (min-width: 1920px) {
+  h1,
+  .h1 {
+    font-size: 150px;
+  }
+}
 
 h2,
 .h2 {
@@ -702,6 +728,12 @@ h2,
   h2,
   .h2 {
     font-size: 36px;
+  }
+}
+@media (min-width: 1920px) {
+  h2,
+  .h2 {
+    font-size: 120px;
   }
 }
 
@@ -758,6 +790,15 @@ h4,
 @media (max-width: 425px) {
   .header {
     height: 50px;
+  }
+}
+@media (min-width: 1920px) {
+  .header {
+    max-width: 2500px;
+    height: 200px;
+  }
+  .header__logo svg {
+    width: 250px;
   }
 }
 
@@ -983,12 +1024,42 @@ h4,
   content: "";
   position: absolute;
   z-index: 0;
-  top: -50%;
+  top: -44%;
   left: -25%;
   width: 150%;
-  height: 700%;
+  height: 720%;
   opacity: 0.7;
   background: url(../img/decor-svg.svg) center/cover no-repeat;
+}
+@media (min-width: 1920px) {
+  .characters .content__title-wrapper::after {
+    height: 900%;
+    top: 0;
+  }
+}
+.characters .gallery__list {
+  grid-template-rows: repeat(8, 11vw);
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-flow: unset;
+  gap: 10px;
+}
+@media (max-width: 425px) {
+  .characters .gallery__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+  }
+  .characters .gallery__list .gallery__item:nth-child(n) {
+    grid-row-end: span 2;
+    grid-column-start: span 3;
+  }
+}
+.characters .gallery__item {
+  grid-row-end: span 2;
+  grid-column-start: span 3;
+}
+.characters .gallery__item:nth-child(1), .characters .gallery__item:nth-child(5), .characters .gallery__item:nth-child(7), .characters .gallery__item:nth-child(11), .characters .gallery__item:nth-child(13), .characters .gallery__item:nth-child(17), .characters .gallery__item:nth-child(19), .characters .gallery__item:last-child {
+  grid-row-end: span 4;
+  grid-column-start: span 6;
 }
 .characters[data-in-view=true] .slide__wrap::before {
   top: 100%;
@@ -1013,6 +1084,15 @@ h4,
   .characters[data-in-view=true] .arrow--next {
     left: 55%;
   }
+}
+.characters[data-in-view=true] .gallery__item {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.characters[data-in-view=true] .animated-text {
+  animation: fill-text 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+}
+.characters[data-in-view=true] .animated-text::after {
+  animation: bright 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
 }
 
 @keyframes gradient-animation {
@@ -1129,11 +1209,8 @@ h4,
   white-space: nowrap;
   position: relative;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-  mask: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.93) 6%, white 50% rgba(0, 0, 0, 0.93) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+  mask: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 1%, white 3%, white 97%, rgba(0, 0, 0, 0.4) 99%, transparent);
 }
 .marquee__list {
   display: flex;
@@ -1164,10 +1241,6 @@ h4,
   overflow: hidden;
 }
 
-.member {
-  width: 110%;
-  height: 110%;
-}
 .member__link {
   display: block;
 }
@@ -1183,9 +1256,8 @@ h4,
 }
 .member__img {
   display: block;
-  max-width: 150%;
-  height: -moz-fit-content;
-  height: fit-content;
+  max-width: 100%;
+  height: 100%;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1196,6 +1268,11 @@ h4,
 @media (max-width: 425px) {
   .member__img {
     height: 400px;
+  }
+}
+@media (min-width: 1920px) {
+  .member__img {
+    width: 110%;
   }
 }
 .member__details {
@@ -1246,15 +1323,7 @@ h4,
   animation: flicker 2s infinite, color-change 1s infinite, draw-line 2s 2s ease-out forwards 1;
 }
 .sculpting[data-in-view=true] .gallery__item {
-  animation: small 1s 1s ease-in-out both;
   transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.sculpting[data-in-view=true] .gallery__item.active {
-  animation: big 0.5s ease-in-out both;
-  transition: transform 0;
-}
-.sculpting[data-in-view=true] .gallery__item.away {
-  opacity: 0;
 }
 
 .gallery {
@@ -1275,6 +1344,17 @@ h4,
 @media (max-width: 425px) {
   .gallery__list {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1920px) {
+  .gallery__list {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 1920px) {
+  .gallery {
+    padding-top: 150px;
+    width: 95vw;
   }
 }
 .gallery__image {
@@ -1313,29 +1393,11 @@ h4,
   grid-row-end: span 3;
   grid-column-end: span 2;
 }
-
-@keyframes small {
-  0% {
-    transform: scale(3.0625);
-    z-index: 2;
-    opacity: 0;
-  }
-  99% {
-    z-index: 2;
-    transform: scale(1);
-  }
-  100% {
-    z-index: 1;
-    opacity: 1;
-  }
+.gallery .img-2x3 {
+  grid-row-end: span 2;
+  grid-column-start: span 3;
 }
-@keyframes big {
-  0% {
-    transform: scale(1);
-    z-index: 2;
-  }
-  100% {
-    z-index: 2;
-    transform: scale(1.5);
-  }
+.gallery .img-4x6 {
+  grid-row-end: span 4;
+  grid-column-start: span 6;
 }/*# sourceMappingURL=styles.css.map */

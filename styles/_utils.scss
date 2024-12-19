@@ -57,6 +57,9 @@
     height: auto;
     max-height: 100%;
   }
+  @include desktop-above {
+    height: 80vh;
+  }
 }
 
 .visually-hidden {
@@ -138,6 +141,11 @@
       left: 19px;
     }
   }
+  @include desktop-above {
+    &__list {
+      font-size: 40px;
+    }
+  }
 }
 
 .is-active {
@@ -188,12 +196,12 @@
   }
 
   @include mobile {
-    top: 92%;
-    width: 10vw;
+    top: max(379px, 21%);
+    width: 8vw;
   }
   @include mobile-s {
-    top: 93%;
-    width: 13vw;
+    top: 13%;
+    width: 10vw;
   }
 }
 
@@ -235,9 +243,9 @@
   background: rgba(0, 0, 0, 0.9);
   animation: rotateGradient 1s ease infinite;
   &__image {
-    max-width: 90%;
-    max-height: 90%;
-    width: 90%;
+    max-width: 98%;
+    max-height: 98%;
+    width: 98%;
     object-fit: contain;
     border-radius: 5px;
     animation: filter-shadow 5s linear infinite;
@@ -293,23 +301,23 @@
   }
   &__logo {
     position: absolute;
-    top: 7%;
-    left: 90%;
-    width: 9vw;
-    height: 9vw;
-    z-index: 2;
-    @include mobile {
-      top: 12%;
-      left: 86%;
-      width: 12vw;
-      height: 12vw;
-    }
-    @include mobile-s {
-      top: 4%;
-      left: 80%;
-      width: 18vw;
-      height: 18vw;
-    }
+    top: -17.18vw;
+    left: 74%;
+    width: min(20vw, 380px);
+    height: min(20vw, 380px);
+    z-index: 0;
+     @include desktop-above {
+    //   top: -14%;
+         left: 81%;
+    //     width: 20vw;
+    //     height: 20vw;
+     }
+     @include mobile-s {
+       top: -8.18vw;
+    //   left: 80%;
+    //   width: 18vw;
+    //   height: 18vw;
+     }
   }
   .logo-path {
     stroke: url(#color-text-gradient);
@@ -350,21 +358,27 @@
   overflow: hidden;
   z-index: 2;
   overflow: visible;
-  animation: fill-text 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  //animation: fill-text 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  @include desktop-above {
+    font-size: 70px;
+  }
 }
 
 .animated-text::after {
   content: attr(data-text);
   position: absolute;
   top: 100%;
-  left: 60%;
+  left: 40vw;
   transform: rotate(3deg);
   width: 0;
   height: 100%;
   background: var(--color-gradient);
-  animation: bright 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  //animation: bright 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
   -webkit-background-clip: text;
   background-clip: text;
+  @include mobile-s {
+    left: 10vw;
+  }
 }
 
 @keyframes fill-text {
@@ -375,8 +389,7 @@
     filter: blur(0px);
   }
   95% {
-    
-    filter: blur(3px);
+    filter: blur(8px);
   }
   100% {
     filter: blur(0.2px);
@@ -398,6 +411,5 @@
   100% {
     width: 100%;
     filter: brightness(1);
-    
   }
 }
