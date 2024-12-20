@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header header--container">
+    <header class="header header--container track-section" data-threshold="0.9">
       <nav class="header__nav nav">
         <ul class="nav__list">
+          <li class="nav__item menu-svg">
+            <svg width="415" height="170" viewBox="0 0 415 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M275.481 39.3381C272.176 45.1225 273.286 56.2943 272.975 62.2427C272.241 76.2638 271.655 90.2932 271.011 104.319M271.011 104.319C270.587 113.547 270.137 122.773 269.604 131.994L269.582 132.373C269.339 136.573 269.096 140.775 268.653 144.959C268.522 146.196 267.824 142.572 267.789 141.328C267.427 128.663 268.246 116.224 271.011 104.319ZM271.011 104.319C273.978 91.5388 279.187 79.3741 287.582 68.2066C297.331 55.2366 306.567 53.6723 312.733 71.8367C318.484 88.7758 317.754 106.202 316.104 123.696C315.718 127.795 313.237 136.346 315.413 140.896C319.236 148.891 337.682 122.349 340.824 118.683M4.82473 155.201C4.82473 151.144 3.16555 148.927 2.222 154.777C1.30055 160.49 3.12751 166.546 9.96966 166.036C23.5307 165.024 31.2445 143.046 36.7839 133.047C54.1356 101.726 67.9754 67.7036 82.0593 34.8699C82.5117 33.8152 85.4039 27.9671 88.1351 21.5093M88.1351 21.5093C91.0009 14.7334 93.6894 7.28616 93.1966 4.00033C92.6568 0.401589 90.0213 10.647 89.3833 14.2297C88.9511 16.6563 88.5352 19.0828 88.1351 21.5093ZM88.1351 21.5093C83.1284 51.8749 80.5999 82.248 79.7592 113.073C79.4051 126.056 78.5541 138.867 80.0013 151.811C81.5298 165.483 83.3727 161.997 87.4464 151.267C93.9812 134.053 103.4 118.298 110.992 101.573C120.29 81.0908 126.276 59.4428 134.961 38.7438C139.832 27.1366 144.624 15.4792 149.488 3.87927C153.577 -5.87007 147.892 24.9694 147.551 35.5358C146.116 80.0345 139.139 124.344 147.551 168.275M170.431 123.605C170.707 121.122 174.003 118.715 175.455 116.886C182.679 107.79 190.894 99.503 198.637 90.8589C203.711 85.1953 220.053 71.5154 218.188 61.6841C215.331 46.6177 192.908 62.7064 187.561 66.9501C178.796 73.9059 170.385 84.1845 167.405 95.1565C159.649 123.713 176.821 151.277 208.08 144.064C222.714 140.686 231.938 129.217 247.787 134.5M359.269 67.7975C358.83 67.0076 356 62.1737 356 63.7421C356 85.8585 356.205 108.07 357.634 130.142C358.155 138.188 360.375 147.705 370.648 143.882C386.658 137.925 398.178 113.073 405.003 95.6473M405.003 95.6473C406.154 92.7083 407.172 89.9806 408.055 87.5904C409.121 84.7037 414.977 62.3449 409.386 60.1709C406.082 58.8861 405.307 79.5128 405.27 80.3875C405.068 85.1588 404.952 90.3142 405.003 95.6473ZM405.003 95.6473C405.16 112.116 406.911 130.279 412.655 144.064"/>
+            </svg>
+          </li>
           <li class="nav__item is-active">
-            <a href=""><span>Portfolio</span></a>
+            <a href="#"><span>Portfolio</span></a>
           </li>
           <li class="nav__item">
             <a href=""><span>Services</span></a>
@@ -49,7 +54,7 @@
     </header>
     <button class="header__close">&times;</button>
     <main class="main section--container">
-      <section class="choise track-section">
+      <section class="choise track-section" data-threshold="0.7">
         <svg class="visually-hidden" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient
@@ -176,13 +181,13 @@
         </div>
       </section>
 
-      <section class="characters content track-section">
+      <section class="characters content">
         <div class="content--container">
-          <div class="content__title-wrapper">
+          <div class="content__title-wrapper track-section" data-threshold="0.9">
             <h2 class="content__title">Characters</h2>
           </div>
 
-          <div class="marquee--container">
+          <div class="marquee--container track-section" data-threshold="0.9">
             <div class="marquee" >
               <ul class="marquee__list" >
                 <li class="marquee__item" data-full-src="./img/Frame 760.png">
@@ -564,10 +569,11 @@
               </svg>
             </button>
           </div>
-          <div class="animated-text" data-text="Brought to Life in 3D">
+          
+          <div class="characters__gallery gallery track-section" data-threshold="0.1">
+            <div class="animated-text" data-text="Brought to Life in 3D">
             Brought to Life in 3D
           </div>
-          <div class="characters__gallery gallery">
             <ul class="gallery__list">
               <li class="gallery__item" data-full-src="./img/character-15.png">
                 <img class="gallery__image" width="2560" height="1440" src="./img/character-15.png"  alt="sculpting image">
@@ -622,12 +628,16 @@
         </div>
       </section>
       <div class="lightbox" id="lightbox" aria-hidden="true">
-        <span class="lightbox__close">&times;</span>
+        <button class="lightbox__close">
+          <svg width="55" height="67" viewBox="0 0 55 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.1709 12.5991C2.1709 27.608 44.6079 42.4679 53.3781 47.4636M43.5725 1.70395C41.8243 1.89819 40.6275 3.45744 39.6382 4.79091C26.7302 22.1886 18.3709 45.7595 8.70801 64.8959"/>
+          </svg>
+        </button>
         <img src="" alt="Full Image" class="lightbox__image" />
         
       </div>
 
-      <section class="sculpting content track-section">
+      <section class="sculpting content track-section" data-threshold="0.2">
         <div class="sculpting__title content__title-wrapper">
           <h2 class="content__title">Sculpting</h2>
           <svg class="content__logo" width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -659,6 +669,8 @@
             </li>
             <li class="gallery__item img-3x2">
               <img class="gallery__image" width="652" height="989" src="./img/sculpting_8.png" alt="sculpting image">
+            </li>
+            <li class="gallery__item img-2x2 empty">
             </li>
           </ul>
         </div>

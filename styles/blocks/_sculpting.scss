@@ -1,8 +1,29 @@
 .sculpting {
-    padding-top: 50px;
+  padding-top: 50px;
+
+  .content__title-wrapper {
+    position: relative;
+  }
   .content__title {
     transform: translateX(150%);
   }
+  @include desktop-above {
+    padding-top: 150px;
+    .gallery {
+      padding-top: 0;
+    }
+    .gallery__list {
+      grid-auto-flow: row;
+      .gallery__item:nth-child(4) {
+        order: 9;
+      }
+      .gallery__item:nth-child(9) {
+        display: block;
+        order: 8;
+      }
+    }
+  }
+
   &[data-in-view="true"] {
     .content__title {
       transition: transform 0.6s 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -10,12 +31,11 @@
       text-align: end;
     }
     .animated-path {
-    animation:  flicker 2s infinite, color-change 1s infinite, draw-line 2s 2s ease-out forwards 1;
+      animation: flicker 2s infinite, color-change 1s infinite,
+        draw-line 2s 2s ease-out forwards 1;
     }
     .gallery__item {
-        
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        
-      }
-}
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  }
 }

@@ -11,6 +11,23 @@
       height: auto;
     }
   }
+  .menu-svg {
+    display: none;
+    padding-bottom: 1.5vw;
+    svg {
+      width: 15vw;
+      height: auto;
+    }
+    path {
+      stroke: url(#color-text-gradient);
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: clamp(12px, 1.18vw, 17px);
+    }
+    @include mobile-s {
+      display: block;
+    }
+  }
   .logo-path {
     stroke: url(#color-text-gradient);
     stroke-linecap: round;
@@ -18,9 +35,22 @@
     stroke-width: clamp(12px, 1.18vw, 17px);
     animation: flicker 2s infinite, color-change 1s infinite;
   }
+  &[data-in-view="false"] .nav .nav__list {
+    position: fixed;
+    display: flex;
+    gap: 60px;
+    top: 0;
+    left: 0;
+    padding: 17px 50px;
+    width: 100vw;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
   
   @include mobile-s {
-    height: 50px;
+    height: 40px;
   }
   @include desktop-above {
     max-width: 2500px;
@@ -32,21 +62,24 @@
   }
   
 }
+@media (hover: none) {
+  .header:active+.header__close{
+    left: 30px;
+  }
+}
 .header__close {
   position: fixed;
-  top: 110px;
+  top: 135px;
   left: -50px;
   background: none;
   color: var(--color-accent);
-  z-index: 2;
+  z-index: 101;
   border: none;
   font-size: 24px;
   line-height: 1;
   padding: 5px;
   transition: left 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  &:active {
-    left:-50px;
-  }
+ 
 }
 
 
