@@ -886,8 +886,7 @@ h4,
 }
 
 @media (hover: none) {
-  .header:active + .header__close,
-  .header:focus + .header__close {
+  .header:hover + .header__close {
     left: 30px;
   }
 }
