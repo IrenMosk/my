@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox__close">
+        <svg width="55" height="67" viewBox="0 0 55 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.1709 12.5991C2.1709 27.608 44.6079 42.4679 53.3781 47.4636M43.5725 1.70395C41.8243 1.89819 40.6275 3.45744 39.6382 4.79091C26.7302 22.1886 18.3709 45.7595 8.70801 64.8959"/>
+        </svg>
+      </button>
+      <img src="" alt="Full Image" class="lightbox__image" />
+      
+    </div>
     <header class="header header--container track-section" data-threshold="0.9">
       <nav class="header__nav nav">
         <ul class="nav__list">
@@ -627,15 +636,6 @@
           </div>
         </div>
       </section>
-      <div class="lightbox" id="lightbox" aria-hidden="true">
-        <button class="lightbox__close">
-          <svg width="55" height="67" viewBox="0 0 55 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.1709 12.5991C2.1709 27.608 44.6079 42.4679 53.3781 47.4636M43.5725 1.70395C41.8243 1.89819 40.6275 3.45744 39.6382 4.79091C26.7302 22.1886 18.3709 45.7595 8.70801 64.8959"/>
-          </svg>
-        </button>
-        <img src="" alt="Full Image" class="lightbox__image" />
-        
-      </div>
 
       <section class="sculpting content track-section" data-threshold="0.2">
         <div class="sculpting__title content__title-wrapper">
@@ -646,28 +646,28 @@
         </div>
         <div class="sculpting__gallery gallery">
           <ul class="gallery__list">
-            <li class="gallery__item img-2x4">
+            <li class="gallery__item img-2x4" data-full-src="./img/sculpting_1.png">
               <img class="gallery__image" width="1325" height="653" src="./img/sculpting_1.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-3x4">
+            <li class="gallery__item img-3x4" data-full-src="./img/sculpting_2.png">
               <img class="gallery__image" width="1325" height="989" src="./img/sculpting_2.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-2x2">
+            <li class="gallery__item img-2x2" data-full-src="./img/sculpting_3.png">
               <img class="gallery__image" width="652" height="653" src="./img/sculpting_3.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-2x2">
+            <li class="gallery__item img-2x2" data-full-src="./img/sculpting_4.png">
               <img class="gallery__image" width="652" height="653" src="./img/sculpting_4.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-2x4">
+            <li class="gallery__item img-2x4" data-full-src="./img/sculpting_5.png">
               <img class="gallery__image" width="1324" height="653" src="./img/sculpting_5.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-4x4">
+            <li class="gallery__item img-4x4" data-full-src="./img/sculpting_6.png">
               <img class="gallery__image" width="1325" height="1325" src="./img/sculpting_6.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-3x2">
+            <li class="gallery__item img-3x2" data-full-src="./img/sculpting_7.png">
               <img class="gallery__image" width="652" height="989" src="./img/sculpting_7.png" alt="sculpting image">
             </li>
-            <li class="gallery__item img-3x2">
+            <li class="gallery__item img-3x2" data-full-src="./img/sculpting_8.png">
               <img class="gallery__image" width="652" height="989" src="./img/sculpting_8.png" alt="sculpting image">
             </li>
             <li class="gallery__item img-2x2 empty">

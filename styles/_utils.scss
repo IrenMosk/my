@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 3;
     transition: height 0.3s ease-in-out;
 
     background-color: rgba(0, 0, 0, 0.5);
@@ -261,7 +261,7 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 4;
   background: rgba(0, 0, 0, 0.9);
   animation: rotateGradient 1s ease infinite;
   &__image {
@@ -300,7 +300,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    z-index: 2;
+    z-index: 5;
     svg {
       width: min(7vw, 53px); 
       height: min(7vw, 53px);
