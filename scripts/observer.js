@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const parent = document.querySelector(".gallery__list");
+  const parents = document.querySelectorAll(".list"); // Получаем все элементы с классом .list
 
-  if (parent) {
-    // Получаем всех дочерних элементов
+  parents.forEach((parent) => {
     const children = parent.children;
 
-    // Преобразуем HTMLCollection в массив и добавляем класс всем элементам
     Array.from(children).forEach((child) => {
       child.classList.add("track-section");
     });
-  }
+  });
+
   const sections = document.querySelectorAll(".track-section");
 
   sections.forEach((section) => {
