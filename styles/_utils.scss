@@ -44,6 +44,7 @@
 // }
 // }
 .section--container {
+  max-width: 2560px;
   position: relative;
   padding-inline: clamp(10px, 5vw, 30px);
   margin-inline: auto;
@@ -56,6 +57,16 @@
     transparent
   );
   mask: linear-gradient(90deg, transparent, white 15%,  white 85%, transparent);
+  @include desktop-above {
+    -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 10%,  white 90%, transparent);
+  }
 }
 .grid--container {
   display: grid;
@@ -157,7 +168,7 @@
   }
   @include desktop-above {
     &__list {
-      font-size: 40px;
+      font-size: 35px;
     }
   }
 }
@@ -429,6 +440,7 @@
     background: url(../img/decor-svg.svg) center/cover no-repeat;
 
     @include desktop-above {
+      width: 200%;
       height: 900%;
       top: 0;
     }

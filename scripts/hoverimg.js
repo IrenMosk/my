@@ -4,8 +4,8 @@ document.querySelectorAll(".gallery__item").forEach((wrapper) => {
     const { offsetWidth: width, offsetHeight: height } = wrapper;
     const { offsetX: x, offsetY: y } = event;
 
-    const rotateX = (y / height - 0.5) * -65;
-    const rotateY = (x / width - 0.5) * 45;
+    const rotateX = (y / height - 0.5) * -35;
+    const rotateY = (x / width - 0.5) * 25;
 
     // Устанавливаем значения в CSS-переменные
     wrapper.style.setProperty("--rotateX", `${rotateX}deg`);
