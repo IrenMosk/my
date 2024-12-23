@@ -1,10 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const parent = document.querySelector(".gallery__list");
+
+  if (parent) {
+    // Получаем всех дочерних элементов
+    const children = parent.children;
+
+    // Преобразуем HTMLCollection в массив и добавляем класс всем элементам
+    Array.from(children).forEach((child) => {
+      child.classList.add("track-section");
+    });
+  }
   const sections = document.querySelectorAll(".track-section");
 
   sections.forEach((section) => {
-    // Получаем значение threshold из атрибута data-threshold или задаем значение по умолчанию
     const thresholdValue =
-      parseFloat(section.getAttribute("data-threshold")) || 0.3;
+      parseFloat(section.getAttribute("data-threshold")) || 1;
 
     const observer = new IntersectionObserver(
       (entries) => {
