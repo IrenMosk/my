@@ -222,7 +222,7 @@
     width: 8vw;
   }
   @include mobile-s {
-    top: 13%;
+    top: 11%;
     width: 10vw;
   }
 }
@@ -343,13 +343,13 @@
   }
   &__logo {
     position: absolute;
-    top: -17.18vw;
+    top: -19.18vw;
     left: 74%;
     width: min(20vw, 380px);
     height: min(20vw, 380px);
     z-index: 0;
     @include desktop-above {
-      //   top: -14%;
+      top: -13.18vw;
       left: 81%;
       //     width: 20vw;
       //     height: 20vw;
@@ -424,6 +424,7 @@
   }
   @include desktop-above {
     top: 10%;
+    left: 30vw;
   }
 }
 .content__title-wrapper {
@@ -443,6 +444,7 @@
       width: 200%;
       height: 900%;
       top: 0;
+      left: -49%;
     }
   }
 }

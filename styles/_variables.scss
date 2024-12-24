@@ -57,13 +57,18 @@
   --header-height: clamp(60px, 8.46vw, 124px);
   --item-width: 25vw;
   --item-koeff: 4.8;
+  --gap: 1.08vw;
   @include tablet {
     --item-width: 44vw;
-    --item-koeff: 2.3;
+    --item-koeff: 3.8;
+  }
+  @include mobile {
+    --item-width: 35vw;
+    --item-koeff: 3.4;
   }
   @include mobile-s {
-    --item-width: 93.75vw;
-    --item-koeff: 1;
+    --item-width: 70vw;
+    --item-koeff: 2.8;
   }
   @include desktop-above {
     --item-width: 25.15vw;

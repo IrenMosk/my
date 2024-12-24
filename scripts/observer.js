@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".track-section");
 
   sections.forEach((section) => {
-    const thresholdValue =
-      parseFloat(section.getAttribute("data-threshold")) || 1;
+    const thresholdValue = parseFloat(
+      section.getAttribute("data-threshold")
+    ) || [0.8, 1];
 
     const observer = new IntersectionObserver(
       (entries) => {
