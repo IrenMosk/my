@@ -59,8 +59,8 @@
   --item-koeff: 4.8;
   --gap: 1.08vw;
   @include tablet {
-    --item-width: 44vw;
-    --item-koeff: 3.8;
+    --item-width: 30vw;
+    --item-koeff: 4.5;
   }
   @include mobile {
     --item-width: 35vw;

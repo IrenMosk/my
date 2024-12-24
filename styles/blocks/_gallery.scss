@@ -12,6 +12,7 @@
    
     @include mobile-s {
       grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(8, auto);
     }
     @include desktop-above {
       grid-template-columns: repeat(12, 1fr);
@@ -71,20 +72,20 @@
       mix-blend-mode: hard-light;
     }
     .gallery__image {
-      filter: brightness(1.4);
       -webkit-mask-image: radial-gradient(
         circle at var(--gradientX, 50%) var(--gradientY, 50%),
-        rgba(255, 255, 255, 1) 35%,
-        transparent 78%
+        rgba(255, 255, 255, 1) 45%,
+        transparent 88%
       );
       mask-image: radial-gradient(
         circle at var(--gradientX, 50%) var(--gradientY, 50%),
-        rgba(255, 255, 255, 1) 35%,
-        transparent 78%
+        rgba(255, 255, 255, 1) 45%,
+        transparent 88%
       );
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
-      mix-blend-mode: lighten;
+      mix-blend-mode: screen;
+      filter: contrast(1.2) brightness(1.3);
     }
   }
 
@@ -155,17 +156,18 @@
     }
   }
   .gallery__item[data-in-view="true"] .gallery__image {
-    filter: brightness(1.4);
     -webkit-mask-image: radial-gradient(
       circle at var(--gradientX, 50%) var(--gradientY, 50%),
-      rgba(255, 255, 255, 1) 35%,
-      transparent 78%
+      rgba(255, 255, 255, 1) 45%,
+      transparent 88%
     );
     mask-image: radial-gradient(
       circle at var(--gradientX, 50%) var(--gradientY, 50%),
-      rgba(255, 255, 255, 1) 35%,
-      transparent 78%
+      rgba(255, 255, 255, 1) 45%,
+      transparent 88%
     );
+    mix-blend-mode: screen;
+    filter: contrast(1.2) brightness(1.3);
   }
 }
 @keyframes small {
