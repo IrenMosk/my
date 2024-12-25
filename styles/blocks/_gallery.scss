@@ -1,5 +1,5 @@
 .gallery {
-  padding: 3.47vw;
+  padding: 4.47vw 3.47vw;
   width: min(100%, 1920px);
   height: min(100%, 1920px);
   margin: auto;
@@ -10,13 +10,6 @@
     gap: 5px;
     grid-auto-flow: dense;
    
-    @include mobile-s {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(8, auto);
-    }
-    @include desktop-above {
-      grid-template-columns: repeat(12, 1fr);
-    }
   }
   @include desktop-above {
     padding-top: 150px;
@@ -27,7 +20,7 @@
   }
   &__image {
     position: relative;
-    object-fit: fill;
+    object-fit: cover;
     height: 100%;
     width: 100%;
     filter: grayscale(100%);
@@ -59,6 +52,9 @@
       z-index: 4;
       opacity: 0;
     }
+  }
+  &__item:not(:target) .gallery__image{
+    filter: grayscale(100%);
   }
   &__item:hover {
     transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg))
@@ -146,6 +142,10 @@
   transform: scale(0);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+.gallery__item:target .gallery__image{
+  filter: grayscale(0) contrast(1.2) brightness(1.3);
+}
+
 @media (hover: none) {
   .gallery__item[data-in-view="true"] {
     box-shadow: inset 0 0 8px 1px rgba(246, 253, 255, 0.2),

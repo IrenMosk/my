@@ -1,8 +1,11 @@
 .archer {
   .content__title-wrapper {
     position: relative;
+    justify-content: center;
   }
   .content__title {
+    display: flex;
+    align-items: center;
     transform: translateX(0) translateY(-50%);
   }
   &__svg {
@@ -12,10 +15,22 @@
     transform: rotate(180deg);
   }
   .content__title-wrapper::after {
-    top: -704%;
-    left: -25%;
-    transform: rotate(15deg);
+    top: -11%;
+    left: -24%;
+    width: 133%;
+    height: 109%;
+    background: url(../img/decor-min-svg.svg) center/cover no-repeat;
     }
+  @include mobile-s {
+    &__svg {
+    width: 9vw;
+    }
+  }
+  @include desktop-above {
+    .content__title-wrapper::after {
+      content: none;
+    }
+  }
 }
 .archer[data-in-view="true"] .content__title {
   transition: transform 1.5s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);

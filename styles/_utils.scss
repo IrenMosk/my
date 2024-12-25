@@ -150,6 +150,7 @@
     &:hover {
       color: var(--color-accent);
     }
+    
   }
   @include mobile-s {
     top: 10px;
@@ -337,30 +338,26 @@
     animation: gradient-animation 2s infinite linear;
   }
   &__logo {
-    position: absolute;
-    top: -19.18vw;
-    left: 74%;
-    width: min(20vw, 380px);
-    height: min(20vw, 380px);
-    z-index: 0;
+    // position: absolute;
+    // top: -120px;
+    // left: 50%;
+    width: min(17vw, 380px);
+    height: min(17vw, 380px);
+    margin: -4vw;
     @include desktop-above {
-      top: -13.18vw;
-      left: 81%;
-      //     width: 20vw;
-      //     height: 20vw;
+      position: absolute;
+      top: 10vw;
+        left: 86%;
     }
     @include mobile-s {
-      top: -8.18vw;
-      //   left: 80%;
-      //   width: 18vw;
-      //   height: 18vw;
+      margin: 0vw;
     }
   }
   .logo-path {
     stroke: url(#color-text-gradient);
     stroke-linecap: round;
     fill: none;
-    stroke-width: clamp(1px, 0.1vw, 3px);
+    stroke-width: clamp(1px, 0.1vw, 1.5px);
     animation: none;
   }
 }
@@ -424,6 +421,7 @@
 }
 .content__title-wrapper {
   overflow: visible;
+  display: flex;
   &::after {
     content: "";
     position: absolute;
@@ -437,9 +435,9 @@
     background: url(../img/decor-svg.svg) center/cover no-repeat;
 
     @include desktop-above {
-      width: 200%;
-      height: 900%;
-      top: 0;
+      width: 150%;
+      height: 800%;
+      top: -71px;
       left: -49%;
     }
   }
