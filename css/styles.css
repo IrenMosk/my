@@ -1515,12 +1515,16 @@ h4,
 .archer .content__title {
   transform: translateX(0) translateY(-50%);
 }
-.archer__svg .animated-path {
-  stroke-width: clamp(1.5px, 0.3vw, 4px);
-  animation: draw-line 3s 2s ease forwards 1;
+.archer__svg {
+  width: 5vw;
 }
 .archer .before {
   transform: rotate(180deg);
+}
+.archer .content__title-wrapper::after {
+  top: -704%;
+  left: -25%;
+  transform: rotate(15deg);
 }
 
 .archer[data-in-view=true] .content__title {
@@ -1535,6 +1539,14 @@ h4,
   scale: 1.2;
   filter: blur(15px);
   transform: translateX(0) translateY(-50%);
+}
+
+.archer[data-in-view=true] .animated-path {
+  animation: color-change 1s infinite, draw-line 3s 2s ease forwards 1;
+}
+
+.archer[data-in-view=false] .animated-path {
+  animation: none;
 }
 
 @keyframes ghost {
