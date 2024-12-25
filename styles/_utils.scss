@@ -51,16 +51,22 @@
     white 85%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, white 15%,  white 85%, transparent);
+  mask: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
   @include desktop-above {
     -webkit-mask: linear-gradient(
-    90deg,
-    transparent,
-    white 10%,
-    white 90%,
-    transparent
-  );
-  mask: linear-gradient(90deg, transparent, white 10%,  white 90%, transparent);
+      90deg,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
   }
 }
 .grid--container {
@@ -150,7 +156,6 @@
     &:hover {
       color: var(--color-accent);
     }
-    
   }
   @include mobile-s {
     top: 10px;
@@ -309,7 +314,7 @@
     cursor: pointer;
     z-index: 5;
     svg {
-      width: min(7vw, 53px); 
+      width: min(7vw, 53px);
       height: min(7vw, 53px);
       stroke: url(#color-text-gradient);
       stroke-linecap: round;
@@ -338,16 +343,13 @@
     animation: gradient-animation 2s infinite linear;
   }
   &__logo {
-    // position: absolute;
-    // top: -120px;
-    // left: 50%;
     width: min(17vw, 380px);
     height: min(17vw, 380px);
     margin: -4vw;
     @include desktop-above {
       position: absolute;
       top: 10vw;
-        left: 86%;
+      left: 86%;
     }
     @include mobile-s {
       margin: 0vw;
@@ -441,6 +443,43 @@
       left: -49%;
     }
   }
+}
+.content__video-wrapper {
+  min-height: 62vh;
+  -webkit-mask-image: radial-gradient(
+    50% 50% at 50% 50%,
+    white 59.16%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    50% 50% at 50% 50%,
+    white 59.16%,
+    transparent 100%
+  );
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+.video--choise {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.video--single {
+  width: auto;
+  opacity: 1;
 }
 
 @keyframes fill-text {

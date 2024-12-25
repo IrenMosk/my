@@ -3,52 +3,22 @@
   --color-dark-rgb: 5, 1, 10;
   --color-accent: #fcb045;
   --color-accent-second: #BD00FF;
-  // --color-gray: #2D2B3B;
-  // --color-light: #FFE4B2;
    --color-light-text: #cacaca;
-  // --color-dark-rgba: rgba(19, 12, 20, 0.5);
-  // --color-bg-light: #DFCCA9;
-  // --color-bg-light-rgba: rgba(223, 204, 169, 1);
-  // --color-bg-light-rgb: rgb(223, 204, 169);
-  // --color-accent-org: #CC5A2B;
-  // --color-bg-gradient: radial-gradient(95.57% 89.64% at 65.57% 49.95%, rgb(88, 81, 100) 0%, rgb(45, 41, 54) 29.49712872505188%, rgb(26, 33, 44) 100%);
-  // --color-bg-gradient2: radial-gradient(566.53% 171.01% at 70.96% 49.95%, rgb(68, 64, 77) 0%, rgb(34, 32, 38) 20.68762332201004%, rgb(32, 49, 57) 100%);
   --color-text-gradient: linear-gradient(123deg, #fcb045 24.21%, #ff3f78 100%);
   --overflow-gradient: radial-gradient(
-    circle,
-    rgba(var(--color-dark-rgb), 0) 0%,
-    rgba(var(--color-dark-rgb), 0.8) 38%,
-    var(--color-dark) 55%,
-    var(--color-dark) 100%
+    44.13% 48% at 50% 50%,
+    rgba(var(--color-dark-rgb), 0) 59.16%, 
+    rgba(var(--color-dark-rgb), 1) 100%
   );
-  --color-gradient: linear-gradient(123deg,  #fcb045 24.21%, #ff3f78 50%, #fcb045 75.21%);
-
-  // --border: 1px solid var(--color-dark);
-  // --border-radius: 14px;
-  // --border-radius-small: 7px;
-  // --border-radius-large: 45px;
-
-   --color-white: #fff;
-  // --color-black: #000;
-
-  // --shadow: 0 4px 15px var(--color-dark-rgba);
-  // --shadow-inset:
-  // inset 0 12px 18px var(--color-dark),
-  // inset 0 -12px 18px var(--color-dark);
-  // --shadow-inset-vert:
-  // inset 12px 0 8px var(--color-dark);
-
-   --font-family-base: "Formular", sans-serif;
-   --font-family-second: "SourGummy_SemiExpanded", sans-serif;
-  // --font-family-second: "Anton", sans-serif;
-
-  // --transition-duration: 0.2s;
-
-  // --container-width: 1420px;
-  // --container-padding-x: 20px;
-
-  // --bg-angle: 0deg;
-
+  --color-gradient: linear-gradient(
+    123deg,
+    #fcb045 24.21%,
+    #ff3f78 50%,
+    #fcb045 75.21%
+  );
+  --color-white: #fff;
+  --font-family-base: "Formular", sans-serif;
+  --font-family-second: "SourGummy_SemiExpanded", sans-serif;
   --font-size--small: 13px;
   --font-size--medium: 20px;
   --font-size--large: 36px;
@@ -71,7 +41,7 @@
     --item-koeff: 2.8;
   }
   @include desktop-above {
-    --item-width: 16vw;
-    --item-koeff: 5.2;
+    --item-width: 17vw;
+    --item-koeff: 6.5;
   }
 }

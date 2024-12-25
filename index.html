@@ -100,7 +100,7 @@
             <span class="choise__title-fill">Portfolio</span>
           </h1>
 
-          <a href="#" class="portfolio portfolio--pc  fullscreen-video">
+          <a href="#" class="portfolio content__video-wrapper fullscreen-video">
             <h2 class="portfolio__title">
               desktop
               <svg
@@ -118,17 +118,17 @@
             </h2>
             <span class="portfolio__overlay"></span>
             <video
-              class="portfolio__video observe-video"
+              class="video video--choise observe-video"
               autoplay
               loop
               muted
               playsinline
               data-intro-video
             >
-              <source
-                src="https://media.room8studio.com/portfolio/wp-content/uploads/2024/02/01160358/services-min.mp4"
-                type="video/mp4"
-              />
+            <source
+            src="./video/tbrender-mp4.mp4"
+            type="video/mp4"
+          />
             </video>
           </a>
 
@@ -158,7 +158,7 @@
               d="M81.9702 170.865C81.9702 171.565 81.8463 172.092 81.2867 172.596C79.5644 174.15 76.3139 175.711 74.7251 176.72C56.5638 188.257 38.815 200.426 20.865 212.285M79.5093 163.893C77.3141 165.174 74.4363 163.513 71.9224 163.141C48.5643 159.683 25.2755 155.921 2 152"/>
           </svg>
 
-          <a href="#" class="portfolio portfolio--mobile  fullscreen-video">
+          <a href="#" class="portfolio content__video-wrapper  fullscreen-video">
             <h2 class="portfolio__title">
               mobile
               <svg
@@ -174,17 +174,17 @@
             </h2>
             <!-- <span class="portfolio__overlay"></span> -->
             <video
-              class="portfolio__video observe-video"
+              class="video video--choise observe-video"
               autoplay
               loop
               muted
               playsinline
               data-intro-video
             >
-              <source
-                src="https://media.room8studio.com/portfolio/wp-content/uploads/2024/02/01160358/services-min.mp4"
-                type="video/mp4"
-              />
+            <source
+            src="./video/tbrender-mp4.mp4"
+            type="video/mp4"
+          />
             </video>
           </a>
         </div>
@@ -726,8 +726,8 @@
           </ul>
         </div>
       </section>
-      <section id="archer" class="archer content--container track-section">
-        <div class="content">
+      <section id="archer" class="archer content track-section" data-threshold="0.4">
+        <div class="content--container">
           <div class="archer__title content__title-wrapper">
           <div class="content__title">
             <svg class="archer__svg before" width="105" height="42" viewBox="0 0 105 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -738,25 +738,23 @@
               <path class="animated-path" d="M26.1009 1.72827C28.1222 10.824 56.903 16.5487 63.5472 18.6158C72.8691 21.5159 83.0032 22.0678 92.6232 23.5352C93.5129 23.671 107.607 25.5177 100.7 25.5177C74.5601 25.5177 46.5234 23.7476 24.7793 40.0557M60.6653 22.2778H45.6876C33.6331 22.2778 21.5859 22.4836 9.53247 22.6001C6.86143 22.6259 4.50925 22.6627 1.96777 21.9365"/>
             </svg>
           </div>
-        </div>
-        <a href="#" class="portfolio portfolio--pc  fullscreen-video">
-          
-          <span class="portfolio__overlay"></span>
-          <video
-            class="portfolio__video observe-video"
-            autoplay
-            loop
-            muted
-            playsinline
-            data-intro-video
-          >
+          </div>
+          <div class="content__video-wrapper  fullscreen-video">
+            <video
+              class="video video--single observe-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              data-intro-video
+            >
             <source
-              src="https://media.room8studio.com/portfolio/wp-content/uploads/2024/02/01160358/services-min.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </a>
-        </div>
+            src="./video/tbrender-mp4.mp4"
+            type="video/mp4"
+          />
+            </video>
+          </div>
+          </div>
         
       </section>
     </main>

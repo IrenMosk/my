@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   portfolioLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      event.preventDefault(); // Отменяем переход по ссылке
+      event.preventDefault();
       const video = link.querySelector("video");
 
       if (video.requestFullscreen) {
-        video.requestFullscreen(); // Открываем видео в полноэкранном режиме
+        video.requestFullscreen();
       } else if (video.webkitRequestFullscreen) {
         video.webkitRequestFullscreen(); // Для Safari
       } else if (video.mozRequestFullScreen) {

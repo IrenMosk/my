@@ -21,6 +21,10 @@
     height: 109%;
     background: url(../img/decor-min-svg.svg) center/cover no-repeat;
     }
+    .content__video-wrapper {
+       height: 50vw;
+       margin-inline: auto;
+    }
   @include mobile-s {
     &__svg {
     width: 9vw;
