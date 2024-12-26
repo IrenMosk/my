@@ -39,9 +39,7 @@
     &[data-animation="running"] {
       animation-play-state: running;
     }
-    &:hover {
-      animation-play-state: paused;
-    }
+    
   }
 
   &__item {

@@ -35,8 +35,10 @@
   }
 
   @include mobile-s {
+    .gallery__list {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, auto);
+    }
     .content__title-wrapper::after {
       top: -58%;
       left: -25%;

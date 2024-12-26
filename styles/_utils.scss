@@ -396,7 +396,7 @@
   overflow: visible;
   //animation: fill-text 6s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
   @include desktop-above {
-    font-size: 3.65vw;
+    font-size: 3.1vw;
   }
 }
 
@@ -404,7 +404,7 @@
   content: attr(data-text);
   position: absolute;
   top: 23%;
-  left: 40vw;
+  left: 49vw;
   transform: rotate(3deg);
   width: 0;
   height: 100%;

@@ -649,7 +649,7 @@ svg * {
 }
 @media (min-width: 1920px) {
   .animated-text {
-    font-size: 3.65vw;
+    font-size: 3.1vw;
   }
 }
 
@@ -657,7 +657,7 @@ svg * {
   content: attr(data-text);
   position: absolute;
   top: 23%;
-  left: 40vw;
+  left: 49vw;
   transform: rotate(3deg);
   width: 0;
   height: 100%;
@@ -1201,9 +1201,6 @@ h4,
 .marquee__list[data-animation=running] {
   animation-play-state: running;
 }
-.marquee__list:hover {
-  animation-play-state: paused;
-}
 .marquee__item {
   position: relative;
   width: var(--item-width);
@@ -1349,7 +1346,7 @@ h4,
   }
 }
 @media (max-width: 425px) {
-  .sculpting {
+  .sculpting .gallery__list {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, auto);
   }
@@ -1620,4 +1617,51 @@ h4,
   50% {
     text-shadow: 0 0 10px #fcb045;
   }
+}
+.slider {
+  height: 50vw;
+}
+.slider__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30vw);
+}
+.slider__image {
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  -webkit-mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 45%, transparent 88%);
+  mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 45%, transparent 88%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mix-blend-mode: screen;
+}
+.slider__item {
+  height: 100%;
+  position: relative;
+  transform-origin: center center;
+  z-index: 3;
+  background-color: var(--color-dark);
+  transition: transform 0.6s ease, scale 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  will-change: transform;
+  transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+  z-index: 4;
+  position: relative;
+  box-shadow: inset 0 0 8px 1px rgba(246, 253, 255, 0.4), 0 15px 15px var(--color-dark);
+}
+.slider__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(254, 254, 254);
+  background: linear-gradient(135deg, transparent 45%, rgba(230, 249, 254, 0.5) 55%, transparent 60%);
+  background-position: var(--gradientX, 50%) var(--gradientY, 50%);
+  background-size: 400%;
+  z-index: 4;
+  opacity: 0.2;
+  mix-blend-mode: hard-light;
 }/*# sourceMappingURL=styles.css.map */

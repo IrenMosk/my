@@ -4,51 +4,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnPrev = document.querySelector(".arrow--prev");
   const btnNext = document.querySelector(".arrow--next");
 
-  let animationDirection = "forwards"; // Начальное направление анимации
+  let animationDirection = "forwards";
   function changeAnimationDirection(direction) {
     animationDirection = direction;
     container.style.setProperty("--_animation-direction", direction);
   }
 
-  // Функция остановки анимации
   function pauseAnimation() {
-    list.setAttribute("data-animation", "paused"); // Остановить анимацию
+    list.setAttribute("data-animation", "paused");
   }
 
-  // Функция возобновления анимации
   function resumeAnimation() {
-    list.setAttribute("data-animation", "running"); // Запустить анимацию
+    list.setAttribute("data-animation", "running");
   }
 
-  // Перестановка содержимого: переместить первый элемент в конец
   function moveFirstToLast() {
     const firstItem = list.firstElementChild;
     list.appendChild(firstItem);
   }
 
-  // Перестановка содержимого: переместить последний элемент в начало
   function moveLastToFirst() {
     const lastItem = list.lastElementChild;
     list.prepend(lastItem);
   }
 
-  // Обработчик кнопки "вперед"
   function scrollToNext() {
-    pauseAnimation(); // Остановить анимацию
-    moveFirstToLast(); // Переместить первый элемент в конец
+    pauseAnimation();
+    moveFirstToLast();
     changeAnimationDirection("forwards");
-    resumeAnimation(); // Сразу возобновить анимацию
+    resumeAnimation();
   }
 
-  // Обработчик кнопки "назад"
   function scrollToPrev() {
-    pauseAnimation(); // Остановить анимацию
-    moveLastToFirst(); // Переместить последний элемент в начало
+    pauseAnimation();
+    moveLastToFirst();
     changeAnimationDirection("reverse");
-    resumeAnimation(); // Сразу возобновить анимацию
+    resumeAnimation();
   }
 
-  // Подключение обработчиков событий к кнопкам
   btnNext.addEventListener("click", scrollToNext);
   btnPrev.addEventListener("click", scrollToPrev);
 });
