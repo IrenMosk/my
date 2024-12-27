@@ -63,11 +63,14 @@
   }
   
 }
-@media (hover: none) {
+@include mobile-s {
+  @media (hover: none) {
   .header:hover+.header__close{
     left: 30px;
   }
 }
+}
+
 .header__close {
   position: fixed;
   top: 135px;

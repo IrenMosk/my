@@ -130,7 +130,7 @@
   animation: fill-text 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
 }
 .gallery[data-in-view="true"] .animated-text::after {
-  animation: bright 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation: width-text 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
 }
 .gallery[data-in-view="false"] .gallery__item {
   opacity: 0;

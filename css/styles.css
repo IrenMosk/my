@@ -472,7 +472,7 @@ svg * {
 }
 @media (max-width: 767px) {
   .arrow {
-    top: max(360px, 21%);
+    top: max(360px, 22%);
     width: 8vw;
   }
 }
@@ -632,50 +632,38 @@ svg * {
   }
 }
 .animated-text {
+  position: relative;
   align-content: end;
   text-wrap: nowrap;
   height: -moz-fit-content;
   height: fit-content;
   font-family: var(--font-family-second);
-  position: relative;
   font-size: clamp(24px, 3.3333333333vw, 48px);
   font-weight: 250;
   font-style: italic;
   color: transparent;
-  position: relative;
-  overflow: hidden;
   z-index: 2;
   overflow: visible;
 }
 @media (min-width: 1920px) {
   .animated-text {
-    font-size: 3.1vw;
+    font-size: 2.6vw;
   }
 }
 
 .animated-text::after {
   content: attr(data-text);
   position: absolute;
-  top: 23%;
-  left: 49vw;
+  top: -4vw;
+  text-align: end;
+  right: 0;
   transform: rotate(3deg);
   width: 0;
   height: 100%;
   background: var(--color-gradient);
   -webkit-background-clip: text;
   background-clip: text;
-}
-@media (max-width: 425px) {
-  .animated-text::after {
-    left: 14vw;
-    top: 0;
-  }
-}
-@media (min-width: 1920px) {
-  .animated-text::after {
-    top: 10%;
-    left: 30vw;
-  }
+  animation: gradient-animation 2s infinite linear;
 }
 
 .content__title-wrapper {
@@ -751,22 +739,26 @@ svg * {
     filter: blur(0.2px);
   }
 }
-@keyframes bright {
+@keyframes width-text {
   0% {
-    opacity: 0;
     width: 0%;
+    opacity: 0;
+    scale: 1.2;
+    filter: blur(15px);
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 10px #fcb045;
   }
   80% {
     width: 100%;
-    opacity: 1;
-    filter: brightness(1);
-  }
-  90% {
-    filter: brightness(2);
   }
   100% {
     width: 100%;
-    filter: brightness(1);
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+    text-shadow: none;
   }
 }
 * {
@@ -941,7 +933,7 @@ h4,
   }
 }
 
-@media (hover: none) {
+@media (max-width: 425px) and (hover: none) {
   .header:hover + .header__close {
     left: 30px;
   }
@@ -1212,6 +1204,24 @@ h4,
   overflow: hidden;
   transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   will-change: transform;
+  box-shadow: 0 15px 15px var(--color-dark);
+}
+.marquee__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(254, 254, 254);
+  box-shadow: inset 0 0 8px 4px rgba(246, 253, 255, 0.6);
+  background: linear-gradient(135deg, transparent 45%, rgba(230, 249, 254, 0.5) 55%, transparent 60%);
+  background-position: var(--gradientX, 50%) var(--gradientY, 50%);
+  background-size: 400%;
+  z-index: 4;
+  opacity: 0.25;
+  mix-blend-mode: hard-light;
+  pointer-events: none;
 }
 .marquee__item:hover {
   transform: scale(1.2);
@@ -1249,7 +1259,6 @@ h4,
   filter: grayscale(10%);
   transition: transform 0.6s ease, filter 0.3s;
   transform-origin: center center;
-  box-shadow: inset 0 0 8px 5px rgba(246, 253, 255, 0.2);
 }
 @media (max-width: 425px) {
   .member__img {
@@ -1493,7 +1502,7 @@ h4,
 }
 
 .gallery[data-in-view=true] .animated-text::after {
-  animation: bright 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation: width-text 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
 }
 
 .gallery[data-in-view=false] .gallery__item {
@@ -1646,8 +1655,6 @@ h4,
   transition: transform 0.6s ease, scale 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   will-change: transform;
   transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
-  z-index: 4;
-  position: relative;
   box-shadow: inset 0 0 8px 1px rgba(246, 253, 255, 0.4), 0 15px 15px var(--color-dark);
 }
 .slider__item::after {
@@ -1664,4 +1671,5 @@ h4,
   z-index: 4;
   opacity: 0.2;
   mix-blend-mode: hard-light;
+  pointer-events: none;
 }/*# sourceMappingURL=styles.css.map */
