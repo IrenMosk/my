@@ -1,9 +1,13 @@
 .archer {
+  .content--container {
+  }
   .content__title-wrapper {
+    grid-column: span 2;
     position: relative;
     justify-content: center;
   }
   .content__title {
+    
     display: flex;
     align-items: center;
     transform: translateX(0) translateY(-50%);
@@ -20,14 +24,15 @@
     width: 133%;
     height: 109%;
     background: url(../img/decor-min-svg.svg) center/cover no-repeat;
-    }
-    .content__video-wrapper {
-       height: 50vw;
-       margin-inline: auto;
-    }
+  }
+  .content__video-wrapper {
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+  }
   @include mobile-s {
     &__svg {
-    width: 9vw;
+      width: 9vw;
     }
   }
   @include desktop-above {
@@ -41,7 +46,8 @@
   transform: translateY(0%);
   text-align: center;
   animation: ghost 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both,
-    gradient-animation 2s infinite linear, glow 1s 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    gradient-animation 2s infinite linear,
+    glow 1s 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .archer[data-in-view="false"] .content__title {
   opacity: 0;
