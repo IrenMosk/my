@@ -29,6 +29,8 @@
     margin-inline: auto;
     display: flex;
     justify-content: center;
+    height: 70vw;
+    min-height: 40vh;
   }
   @include mobile-s {
     &__svg {
