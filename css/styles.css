@@ -1691,7 +1691,6 @@ h4,
   display: flex;
   flex-direction: column;
   margin-inline: auto;
-  overflow: hidden;
 }
 .slider__list {
   display: grid;
