@@ -8,7 +8,7 @@
     margin: 0;
   }
   @include desktop-above {
-    width: 70%;
+    width: 50%;
   }
   &__list {
     display: grid;
@@ -17,7 +17,7 @@
       grid-template-columns: repeat(auto-fit, 4vw);
     }
     @include desktop-above {
-      grid-template-columns: repeat(auto-fit, 100px);
+      grid-template-columns: repeat(auto-fit, 50px);
     }
   }
   &__image {
@@ -90,9 +90,12 @@
   opacity: 0.9;
 }
 .active ~ .slider__item {
-  translate: 94%;
+  translate: 20%;
   scale: 1.1;
   transition: translate 0.5s ease;
+}
+.active {
+  z-index: 5;
 }
 .active> .slider__image {
   border-top-width: 3px;

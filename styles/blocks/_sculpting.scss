@@ -7,11 +7,16 @@
       align-items: flex-end;
   }
   .content__title-wrapper::after {
-    top: 80%;
-    left: -25%;
+    left: -93%;
+    width: 174%;
+    height: 466%;
+    @include desktop-above {
+      top: 517%;
+    left: -8%;
     transform: rotate(15deg);
-    width: 150%;
-    height: 900%;
+    width: 128%;
+    height: 529%;
+    }
   }
   .content__title {
     transform: translateX(150%);
