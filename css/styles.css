@@ -1597,40 +1597,45 @@ h4,
   left: auto;
   align-items: center;
   justify-content: center;
-  width: 90vw;
 }
 .archer .arrow-slider {
   background-color: transparent;
   border: none;
-  padding: 2vw;
-  transition: transform 1.5s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  padding: clamp(5px, 3vw, 25px);
+  transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .archer .arrow-slider svg {
-  width: 5vw;
+  width: clamp(20px, 7vw, 60px);
 }
-.archer .arrow-slider--prev {
+
+.archer[data-in-view=true] .arrow-slider--prev {
   transform: rotateY(180deg) translateX(50vw);
 }
 @media (hover: hover) {
-  .archer .arrow-slider--prev:hover {
+  .archer[data-in-view=true] .arrow-slider--prev:hover {
+    transition: transform 0.3s ease;
     transform: rotateY(180deg) scale(1.2);
   }
 }
 @media (hover: none) {
-  .archer .arrow-slider--prev:active {
+  .archer[data-in-view=true] .arrow-slider--prev:active {
+    transition: transform 0.3s ease;
     transform: rotateY(180deg) scale(1.2);
   }
 }
-.archer .arrow-slider--next {
+
+.archer[data-in-view=true] .arrow-slider--next {
   transform: translateX(50vw);
 }
 @media (hover: hover) {
-  .archer .arrow-slider--next:hover {
+  .archer[data-in-view=true] .arrow-slider--next:hover {
+    transition: transform 0.3s ease;
     transform: scale(1.2);
   }
 }
 @media (hover: none) {
-  .archer .arrow-slider--next:active {
+  .archer[data-in-view=true] .arrow-slider--next:active {
+    transition: transform 0.3s ease;
     transform: scale(1.2);
   }
 }
@@ -1703,13 +1708,14 @@ h4,
   position: relative;
   -o-object-fit: cover;
      object-fit: cover;
-  background-color: white;
   -webkit-mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 69%, transparent 100%);
   mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 69%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   mix-blend-mode: screen;
   border: 2px solid var(--color-accent);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
 }
 .slider__item {
   width: -moz-fit-content;

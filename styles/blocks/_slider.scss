@@ -14,7 +14,6 @@
     max-width: 80vw;
     position: relative;
     object-fit: cover;
-    background-color: white;
     -webkit-mask-image: radial-gradient(
       circle at var(--gradientX, 50%) var(--gradientY, 50%),
       rgba(255, 255, 255, 1) 69%,
@@ -29,7 +28,8 @@
     mask-repeat: no-repeat;
     mix-blend-mode: screen;
     border: 2px solid var(--color-accent);
-    
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
   }
   &__item {
     width: fit-content;
@@ -57,6 +57,7 @@
       opacity: 0.2;
       mix-blend-mode: hard-light;
       pointer-events: none;
+      
     }
   }
 }

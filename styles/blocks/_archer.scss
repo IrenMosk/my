@@ -50,28 +50,31 @@
     left: auto;
     align-items: center;
     justify-content: center;
-    width: 90vw;
   }
   .arrow-slider {
     background-color: transparent;
     border: none;
-    padding: 2vw;
+    padding: clamp(5px, 3vw, 25px);
     svg {
-      width: 5vw;
+      width: clamp(20px, 7vw, 60px);
     }
-    transition: transform 1.5s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
-  .arrow-slider--prev {
-    transform: rotateY(180deg) translateX(50vw);
-    @include hover {
-        transform: rotateY(180deg) scale(1.2);
-    }
-  }
-  .arrow-slider--next {
-    transform: translateX(50vw);
+  
+
+}
+.archer[data-in-view="true"] .arrow-slider--prev {
+  transform: rotateY(180deg) translateX(50vw);
   @include hover {
-      transform: scale(1.2); 
-    }
+    transition: transform 0.3s ease;
+      transform: rotateY(180deg) scale(1.2);
+  }
+}
+.archer[data-in-view="true"] .arrow-slider--next {
+  transform: translateX(50vw);
+@include hover {
+  transition: transform 0.3s ease;
+    transform: scale(1.2); 
   }
 }
 .archer[data-in-view="true"] .content__title {
