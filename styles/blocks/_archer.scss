@@ -1,5 +1,6 @@
 .archer {
-  .content--container {
+  .video {
+    opacity: 1;
   }
   .content__title-wrapper {
     grid-column: span 2;
@@ -30,7 +31,7 @@
     display: flex;
     justify-content: center;
     height: 70vw;
-    min-height: 40vh;
+    max-height: 40vh;
   }
   @include mobile-s {
     &__svg {
@@ -40,6 +41,36 @@
   @include desktop-above {
     .content__title-wrapper::after {
       content: none;
+    }
+  }
+  &__arrow {
+    position: relative;
+    display: flex;
+    top: auto;
+    left: auto;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  .arrow-slider {
+    background-color: transparent;
+    border: none;
+    padding: 2vw;
+    svg {
+      width: 5vw;
+    }
+    transition: transform 1.5s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  .arrow-slider--prev {
+    transform: rotateY(180deg) translateX(50vw);
+    @include hover {
+        transform: rotateY(180deg) scale(1.2);
+    }
+  }
+  .arrow-slider--next {
+    transform: translateX(50vw);
+  @include hover {
+      transform: scale(1.2); 
     }
   }
 }
@@ -63,6 +94,13 @@
 .archer[data-in-view="false"] .animated-path {
   animation: none;
 }
+.slider[data-in-view="true"] .arrow-slider--prev {
+  transform: rotateY(180deg) translateX(0);
+}
+.slider[data-in-view="true"] .arrow-slider--next {
+  transform: translateX(0);
+}
+
 @keyframes ghost {
   0% {
     opacity: 0;

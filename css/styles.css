@@ -449,9 +449,8 @@ svg * {
   height: 5.27vw;
   border: none;
   cursor: pointer;
-  transition: transform 0.4s ease;
   background-color: transparent;
-  transition: left 1s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: left 1s 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), transform 0.4s ease;
 }
 .arrow svg {
   width: 90%;
@@ -1548,6 +1547,9 @@ h4,
     opacity: 1;
   }
 }
+.archer .video {
+  opacity: 1;
+}
 .archer .content__title-wrapper {
   grid-column: span 2;
   position: relative;
@@ -1576,7 +1578,7 @@ h4,
   display: flex;
   justify-content: center;
   height: 70vw;
-  min-height: 40vh;
+  max-height: 40vh;
 }
 @media (max-width: 425px) {
   .archer__svg {
@@ -1586,6 +1588,50 @@ h4,
 @media (min-width: 1920px) {
   .archer .content__title-wrapper::after {
     content: none;
+  }
+}
+.archer__arrow {
+  position: relative;
+  display: flex;
+  top: auto;
+  left: auto;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+}
+.archer .arrow-slider {
+  background-color: transparent;
+  border: none;
+  padding: 2vw;
+  transition: transform 1.5s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.archer .arrow-slider svg {
+  width: 5vw;
+}
+.archer .arrow-slider--prev {
+  transform: rotateY(180deg) translateX(50vw);
+}
+@media (hover: hover) {
+  .archer .arrow-slider--prev:hover {
+    transform: rotateY(180deg) scale(1.2);
+  }
+}
+@media (hover: none) {
+  .archer .arrow-slider--prev:active {
+    transform: rotateY(180deg) scale(1.2);
+  }
+}
+.archer .arrow-slider--next {
+  transform: translateX(50vw);
+}
+@media (hover: hover) {
+  .archer .arrow-slider--next:hover {
+    transform: scale(1.2);
+  }
+}
+@media (hover: none) {
+  .archer .arrow-slider--next:active {
+    transform: scale(1.2);
   }
 }
 
@@ -1611,6 +1657,14 @@ h4,
   animation: none;
 }
 
+.slider[data-in-view=true] .arrow-slider--prev {
+  transform: rotateY(180deg) translateX(0);
+}
+
+.slider[data-in-view=true] .arrow-slider--next {
+  transform: translateX(0);
+}
+
 @keyframes ghost {
   0% {
     opacity: 0;
@@ -1634,31 +1688,35 @@ h4,
 .slider {
   padding-top: 3vw;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  overflow: hidden;
 }
 .slider__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 6vw);
 }
 .slider__image {
-  height: 40vw;
-  min-height: 27vh;
+  height: clamp(300px, 40vw, 600px);
   width: auto;
   max-width: 80vw;
   position: relative;
   -o-object-fit: cover;
      object-fit: cover;
   background-color: white;
-  -webkit-mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 45%, transparent 88%);
-  mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 45%, transparent 88%);
+  -webkit-mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 69%, transparent 100%);
+  mask-image: radial-gradient(circle at var(--gradientX, 50%) var(--gradientY, 50%), rgb(255, 255, 255) 69%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   mix-blend-mode: screen;
   border: 2px solid var(--color-accent);
 }
 .slider__item {
+  width: -moz-fit-content;
+  width: fit-content;
   transition: translate 0.5s ease;
   position: relative;
-  background-color: var(--color-dark);
   filter: brightness(1.1) contrast(1.1);
   transform-origin: center center;
   z-index: 3;
@@ -1673,24 +1731,21 @@ h4,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(254, 254, 254);
-  background: linear-gradient(135deg, transparent 35%, rgba(230, 249, 254, 0.5) 55%, transparent 70%);
-  background-position: var(--gradientX, 50%) var(--gradientY, 50%);
-  background-size: 400%;
+  background: linear-gradient(135deg, transparent -16%, rgba(255, 234, 206, 0.4) 22%, transparent 35%);
+  background-position: var(--gradientX, 0) var(--gradientY, 0);
+  background-size: 100%;
   z-index: 4;
   opacity: 0.2;
   mix-blend-mode: hard-light;
   pointer-events: none;
 }
 
-.slider__item:hover ~ .slider__item,
 .active ~ .slider__item {
   translate: 55vw;
   scale: 1.1;
   transition: translate 0.5s ease;
 }
 
-.slider__item:hover ~ .slider__item .slider__img,
 .active ~ .slider__item .slider__img {
   box-shadow: inset 0 0 3px 4px rgba(0, 0, 0, 0.3);
 }/*# sourceMappingURL=styles.css.map */
