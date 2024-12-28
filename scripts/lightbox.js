@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const galleryes = document.querySelectorAll(".gallery__list");
+  const galleryes = document.querySelectorAll(".lightbox-list");
   const lightbox = document.querySelector("#lightbox");
   const lightboxImage = lightbox.querySelector(".lightbox__image");
   const lightboxClose = lightbox.querySelector(".lightbox__close");
