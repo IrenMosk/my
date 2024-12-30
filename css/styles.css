@@ -1083,6 +1083,7 @@ h4,
   padding-bottom: 20px;
   width: -moz-min-content;
   width: min-content;
+  transition: color 0.4s ease;
 }
 .portfolio__line {
   display: none;
@@ -1093,6 +1094,10 @@ h4,
   animation-delay: 0s;
 }
 @media (hover: hover) {
+  .portfolio:hover .portfolio__title {
+    color: var(--color-accent);
+    transition: color 0.4s ease;
+  }
   .portfolio:hover .portfolio__line {
     display: block;
     opacity: 1;
@@ -1103,6 +1108,10 @@ h4,
   }
 }
 @media (hover: none) {
+  .portfolio:active .portfolio__title {
+    color: var(--color-accent);
+    transition: color 0.4s ease;
+  }
   .portfolio:active .portfolio__line {
     display: block;
     opacity: 1;
