@@ -1,0 +1,18 @@
+.tarcus {
+    .content__video-wrapper {
+      @include tablet-above {
+        -webkit-mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
+      mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
+      width: auto;
+      
+      }
+      
+    }
+    .slider {
+      width: 75%;
+      @include desktop-above {
+        width: 52%;
+      }
+    }
+  }
+  
