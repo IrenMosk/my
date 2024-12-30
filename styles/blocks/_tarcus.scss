@@ -1,18 +1,31 @@
 .tarcus {
     .content__video-wrapper {
-      @include tablet-above {
-        -webkit-mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
+      -webkit-mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
       mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
-      width: auto;
-      
-      }
-      
-    }
-    .slider {
-      width: 75%;
+     
+      @include tablet {
+        -webkit-mask-image: radial-gradient(38% 51% at 50% 50%, white 56.16%, transparent 100%);
+      mask-image: radial-gradient(38% 51% at 50% 50%, white 56.16%, transparent 100%);
+      } 
+   
+    @include mobile {
+      -webkit-mask-image: radial-gradient(50% 51% at 50% 50%, white 56.16%, transparent 100%);
+      mask-image: radial-gradient(50% 51% at 50% 50%, white 56.16%, transparent 100%);
+      } 
       @include desktop-above {
-        width: 52%;
+        -webkit-mask-image: radial-gradient(22% 51% at 50% 50%, white 56.16%, transparent 100%);
+      mask-image: radial-gradient(22% 51% at 50% 50%, white 56.16%, transparent 100%);
       }
+    }
+     
+    .video {
+      transform: translateX(10%);
+    }
+    .slider__list {
+      @include desktop-above {
+        width: 50%;
+      }
+      
     }
   }
   
