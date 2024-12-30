@@ -1,7 +1,7 @@
 .tarcus {
     .content__video-wrapper {
-      -webkit-mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
-      mask-image: radial-gradient(33% 51% at 50% 50%, white 56.16%, transparent 100%);
+      -webkit-mask-image: radial-gradient(30% 51% at 50% 50%, white 56.16%, transparent 100%);
+      mask-image: radial-gradient(30% 51% at 50% 50%, white 56.16%, transparent 100%);
      
       @include tablet {
         -webkit-mask-image: radial-gradient(38% 51% at 50% 50%, white 56.16%, transparent 100%);
