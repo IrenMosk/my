@@ -259,6 +259,9 @@
   .observe-video[data-visible="true"] {
     opacity: 1;
   }
+  .portfolio__title {
+    text-shadow: 4px 0 3px var(--color-dark), 0 4px 3px var(--color-dark);
+  }
   .observe-video[data-visible="false"] {
     opacity: 0;
   }
