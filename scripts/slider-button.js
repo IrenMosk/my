@@ -1,4 +1,3 @@
-// Получаем элементы
 function initializeSlider(sliderContainerSelector) {
   const sliderContainer = document.querySelector(sliderContainerSelector);
   if (!sliderContainer) return;
@@ -7,26 +6,23 @@ function initializeSlider(sliderContainerSelector) {
   const prevButton = sliderContainer.querySelector(".arrow-slider--prev");
   const nextButton = sliderContainer.querySelector(".arrow-slider--next");
 
-  // Универсальная функция для установки активного элемента
   function setActiveItem(item) {
-    sliderItems.forEach((slider) => slider.classList.remove("active")); // Убираем .active у всех
-    item.classList.add("active"); // Добавляем .active текущему
+    sliderItems.forEach((slider) => slider.classList.remove("active"));
+    item.classList.add("active");
   }
 
-  // Функция для получения текущего индекса активного элемента
   function getActiveIndex() {
     return [...sliderItems].findIndex((item) =>
       item.classList.contains("active")
     );
   }
 
-  // Функция для обновления активного элемента по индексу
   function updateActiveItem(index) {
-    const boundedIndex = (index + sliderItems.length) % sliderItems.length; // Учитываем зацикливание
+    const boundedIndex = (index + sliderItems.length) % sliderItems.length;
     setActiveItem(sliderItems[boundedIndex]);
   }
 
-  // Обработчики для кнопок
+  // Обработка кнопок "вперед" и "назад"
   prevButton.addEventListener("click", () => {
     const currentIndex = getActiveIndex();
     updateActiveItem(currentIndex - 1);
@@ -37,17 +33,46 @@ function initializeSlider(sliderContainerSelector) {
     updateActiveItem(currentIndex + 1);
   });
 
-  // Обработчики для наведения мыши
-  sliderItems.forEach((item) => {
-    item.addEventListener("mouseover", () => setActiveItem(item)); // Наведение
+  // Добавляем обработку смахивания
+  let startX = 0;
+  let endX = 0;
+
+  sliderContainer.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX; // Запоминаем начальную точку касания
   });
 
-  // Установим первый элемент как активный по умолчанию
+  sliderContainer.addEventListener("touchmove", (event) => {
+    endX = event.touches[0].clientX; // Запоминаем текущую точку касания
+  });
+
+  sliderContainer.addEventListener("touchend", () => {
+    const swipeThreshold = 50; // Пороговое значение для распознавания смахивания
+    const deltaX = endX - startX;
+
+    if (Math.abs(deltaX) > swipeThreshold) {
+      const currentIndex = getActiveIndex();
+      if (deltaX > 0) {
+        // Смахивание вправо
+        updateActiveItem(currentIndex - 1);
+      } else {
+        // Смахивание влево
+        updateActiveItem(currentIndex + 1);
+      }
+    }
+  });
+
+  // Добавляем hover для активации слайдов
+  sliderItems.forEach((item) => {
+    item.addEventListener("mouseover", () => setActiveItem(item));
+  });
+
+  // Устанавливаем активный элемент по умолчанию
   if (sliderItems.length > 0) {
     setActiveItem(sliderItems[3]);
   }
 }
 
-// Инициализация нескольких слайдеров
+// Инициализация слайдеров
+initializeSlider(".slider--boom-crane");
 initializeSlider(".slider--archer");
 initializeSlider(".slider--tarcus");
