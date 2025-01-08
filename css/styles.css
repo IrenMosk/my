@@ -1953,16 +1953,16 @@ h4,
 }
 @media (hover: hover) {
   .footer__mailto:hover {
-    box-shadow: -5px -3px 15px 2px var(--color-accent), -3px -3px 0px 0px rgba(255, 255, 255, 0.7);
-    border-color: var(--color-accent);
+    box-shadow: -3px -3px 0px 0px rgba(255, 255, 255, 0.7), -2px -2px 0px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px 0px rgba(255, 255, 255, 0.9);
+    /* border-color: var(--color-accent); */
     transform: scale(1.2) rotateX(-8deg) rotateY(22deg);
     transform-style: preserve-3d;
   }
 }
 @media (hover: none) {
   .footer__mailto:active {
-    box-shadow: -5px -3px 15px 2px var(--color-accent), -3px -3px 0px 0px rgba(255, 255, 255, 0.7);
-    border-color: var(--color-accent);
+    box-shadow: -3px -3px 0px 0px rgba(255, 255, 255, 0.7), -2px -2px 0px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px 0px rgba(255, 255, 255, 0.9);
+    /* border-color: var(--color-accent); */
     transform: scale(1.2) rotateX(-8deg) rotateY(22deg);
     transform-style: preserve-3d;
   }
