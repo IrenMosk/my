@@ -21,11 +21,6 @@
     .video {
       transform: translateX(10%);
     }
-    .slider__list {
-      @include desktop-above {
-        width: 50%;
-      }
-      
-    }
+    
   }
   

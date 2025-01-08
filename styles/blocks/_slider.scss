@@ -14,7 +14,8 @@
     }
     @include desktop-above {
       grid-template-columns: repeat(auto-fit, 50px);
-      width: 44vw;
+      width: 60%;
+      
     }
   }
   &__image {
@@ -81,6 +82,7 @@
       
     }
   }
+  
 }
 .slider__item:not(.active) {
   filter: brightness(0.4);

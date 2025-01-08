@@ -1,12 +1,13 @@
 .container {
   margin-inline: auto;
   height: auto;
-
+  
   &__section {
     width: max(250px, 79.17vw);
   }
 }
-.header--container {
+.header--container,
+.footer--container {
   height: auto;
   @include mobile-s {
     overflow: hidden;
@@ -473,6 +474,7 @@
   width: auto;
   opacity: 1;
 }
+
 
 @keyframes fill-text {
   0% {

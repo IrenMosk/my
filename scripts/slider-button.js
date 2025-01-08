@@ -68,11 +68,12 @@ function initializeSlider(sliderContainerSelector) {
 
   // Устанавливаем активный элемент по умолчанию
   if (sliderItems.length > 0) {
-    setActiveItem(sliderItems[3]);
+    setActiveItem(sliderItems[2]);
   }
 }
 
 // Инициализация слайдеров
 initializeSlider(".slider--boom-crane");
+initializeSlider(".slider--weapon");
 initializeSlider(".slider--archer");
 initializeSlider(".slider--tarcus");
