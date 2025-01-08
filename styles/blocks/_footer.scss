@@ -114,7 +114,13 @@
         animation: shine 5s linear infinite;
         background-size: 200%;
       }
+
+      transition: 
+    box-shadow 0.5s ease, 
+    border-color 0.5s ease, 
+    transform 0.5s ease;
   @include hover {
+
     box-shadow: -5px -3px 15px 2px var(--color-accent), -3px -3px 0px 0px rgba(255, 255, 255, 0.7);
         border-color: var(--color-accent);
         transform: scale(1.2) rotateX(-8deg) rotateY(22deg);
