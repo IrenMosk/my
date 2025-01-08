@@ -6,8 +6,7 @@
     width: max(250px, 79.17vw);
   }
 }
-.header--container,
-.footer--container {
+.header--container{
   height: auto;
   @include mobile-s {
     overflow: hidden;

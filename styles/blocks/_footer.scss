@@ -1,46 +1,57 @@
 .footer {
   height: 100vh;
   text-transform: uppercase;
-  p {
-    padding-left: 4vw;
-    text-shadow: 0 0 7px rgba(255, 255, 255, 0.3),
-      0 0 3px rgba(255, 255, 255, 0.3);
+  margin-top: 5vw;
+  .text {
+    width: 100%;
+    text-align: end;
+      @include mobile {
+        text-align: center;
+      }
   }
   svg {
     width: auto;
-    height: 1em; 
+    height: 1.2em; 
     vertical-align: top;
     animation: hello 4s 5s infinite;
     transform-origin: bottom center;
   }
   .animated-path {
-    stroke-width: 1px;
+    stroke-width: clamp(0.5px, 0.05vw, 1px);
+    stroke-linecap: round;
     stroke-dasharray: 90;
   stroke-dashoffset: 90;
-  animation: draw-line 2s 1s ease-out forwards;
+  animation: flicker 2s infinite, color-change 1s infinite, draw-line 2s 2s ease-out forwards 1;
   }
   .container {
     color: var(--color-light-text);
     font-weight: 400;
     @include fluid-text(85, 48);
-    @include mobile-s {
+    line-height: 1.5;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    
+    @include mobile {
       font-size: 36px;
+      grid-template-columns: 1fr;
     }
     @include desktop-above {
       font-size: 120px;
     }
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+}
   .animation {
-    width: 460px;
-    margin-left: 5vw;
+    padding-left: 5vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 50%;
+    @include mobile {
+        width: auto;
+        text-align: center;
+        padding: 0;
+      }
   }
 
   .animation > div {
@@ -57,6 +68,10 @@
       rgba(255, 255, 255, 1) 69%,
       transparent 100%
     );
+    @include mobile {
+        --gradientX: 50%;
+        padding-inline: 2vw;
+    }
   }
   .animation > div > div {
     font-family: var(--font-family-second);
@@ -67,7 +82,7 @@
   }
   .first {
     animation: text-animation 15s ease infinite;
-    transform: translateY(110px);
+    transform: translateY(1.5em);
     color: var(--color-accent-second);
     text-shadow: 1px 1px 15px var(--color-accent-second);
   }
@@ -78,7 +93,7 @@
   }
   .third {
     animation: text-animation 15s 10s ease infinite;
-    transform: translateY(-110px);
+    transform: translateY(-1.5em);
     color: var(--color-accent-third);
     text-shadow: 1px 1px 15px var(--color-accent-third);
   }
@@ -88,10 +103,14 @@
     align-items: center;
     text-align: center;
   }
+  &__title {
+    font-weight: 300;
+  }
   &__mailto {
-    margin-top: 5vw;
+    margin-top: clamp(30px, 5vw, 60px);
     position: relative;
-    padding: 1vw 2vw;
+    padding-inline: clamp(10px, 2vw, 30px);
+    padding-block: clamp(5px, 1vw, 20px);;
     background-color: rgba(255, 255, 255, 0.3);
     svg {
         padding-left: 1vw;
@@ -124,6 +143,7 @@
     /* border-color: var(--color-accent); */
     transform: scale(1.2) rotateX(-8deg) rotateY(22deg);
     transform-style: preserve-3d;
+    text-shadow: 1px 1px 1px var(--color-dark), -0.5px -0.5px 0px rgba(255, 255, 255, 0.9);
   }
 }
 }
