@@ -1,5 +1,6 @@
 .footer {
-  height: 100vh;
+  position: relative;
+  height: 90vh;
   text-transform: uppercase;
   margin-top: 5vw;
   .text {
@@ -33,7 +34,9 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
-    
+    .text svg {
+      animation-delay: 3s;
+    }
     @include mobile {
       font-size: 36px;
       grid-template-columns: 1fr;
@@ -98,20 +101,39 @@
     text-shadow: 1px 1px 15px var(--color-accent-third);
   }
   &__contacts {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+     grid-template-columns: repeat(2, clamp(160px, 20vw, 280px));
     align-items: center;
     text-align: center;
+    justify-content: center;
+    column-gap: 3vw;
+    @include mobile-s {
+      grid-template-columns: auto;
+      justify-items: center;
+    }
   }
   &__title {
+    grid-column: span 2;
     font-weight: 300;
+    span {
+      font-family: var(--font-family-second);
+      font-weight: 250;
+      font-style: italic;
+      font-size: 1.2em;
+    }
+    @include mobile-s {
+      grid-column: 1;
+    }
   }
-  &__mailto {
+  &__mailto,
+  &__telegram {
+    width: 100%;
     margin-top: clamp(30px, 5vw, 60px);
     position: relative;
     padding-inline: clamp(10px, 2vw, 30px);
     padding-block: clamp(5px, 1vw, 20px);;
     background-color: rgba(255, 255, 255, 0.3);
+    text-wrap: nowrap;
     svg {
         padding-left: 1vw;
     }
@@ -145,6 +167,46 @@
     transform-style: preserve-3d;
     text-shadow: 1px 1px 1px var(--color-dark), -0.5px -0.5px 0px rgba(255, 255, 255, 0.9);
   }
+  @include mobile-s {
+    width: clamp(160px, 20vw, 200px);
+  }
+}
+&__telegram::before {
+  animation-delay: 4s;
+}
+&__rights {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  text-transform: none;
+
+  span {
+    font-family: var(--font-family-second);
+    font-weight: 250;
+    font-style: italic;
+    text-transform: none;
+    margin-right: auto;
+    text-align: center;
+  }
+  svg {
+    animation: none;
+    stroke: var(--color-light-text);
+     stroke-linecap: round;
+     stroke-linejoin: round;
+     height: 1em;
+  }
+  @include mobile {
+    flex-direction: row-reverse;
+        font-size: clamp(10px, 0.5vw, 13px);
+        flex-wrap: wrap;
+    span {
+      margin-right: 0;
+    }
+  }
 }
 }
 @keyframes text-animation {
@@ -165,16 +227,16 @@
         transform: rotateZ(0);
     }
     2% {
-        transform: rotateZ(20deg);
+        transform: rotateZ(10deg);
     }
     4% {
-        transform: rotateZ(-20deg);
+        transform: rotateZ(-10deg);
     }
     6% {
-        transform: rotateZ(20deg);
+        transform: rotateZ(10deg);
     }
     8% {
-        transform: rotateZ(-20deg);
+        transform: rotateZ(-10deg);
     }
     10% {
         transform: rotateZ(0);

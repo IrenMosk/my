@@ -127,6 +127,9 @@
     }
   }
   &__details {
+    font-family: var(--font-family-second);
+    font-weight: 250;
+    font-style: italic;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -139,6 +142,8 @@
   }
   &__title {
     margin: 0 0 5px;
+    text-transform: uppercase;
+    text-shadow: 0.1vw 0.1vw 0.1vw var(--color-dark);
     @include mobile-s {
       font-size: 1.6em;
     }

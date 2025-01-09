@@ -28,7 +28,7 @@
   }
   &__item {
     position: relative;
-    transform-origin: center center;
+    transform-origin: center -100px;
     z-index: 3;
     background-color: var(--color-dark);
     transition: transform 0.6s ease, scale 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -52,6 +52,10 @@
       background-size: 400%;
       z-index: 4;
       opacity: 0;
+      
+    }
+    @include desktop-above {
+      transform-origin: center -500px;
     }
   }
   &__item:not(:target) .gallery__image{
@@ -63,7 +67,7 @@
     z-index: 4;
     position: relative;
     box-shadow: inset 0 0 8px 1px rgba(246, 253, 255, 0.4),
-      0 15px 15px var(--color-dark);
+    0 1px 7px 5px var(--color-dark);
     &::after {
       opacity: 0.2;
       mix-blend-mode: hard-light;
