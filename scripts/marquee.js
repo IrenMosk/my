@@ -4,12 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnPrev = document.querySelector(".arrow--prev");
   const btnNext = document.querySelector(".arrow--next");
 
-  let animationDirection = "forwards";
-  function changeAnimationDirection(direction) {
-    animationDirection = direction;
-    container.style.setProperty("--_animation-direction", direction);
-  }
-
   function pauseAnimation() {
     list.setAttribute("data-animation", "paused");
   }
@@ -31,14 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function scrollToNext() {
     pauseAnimation();
     moveFirstToLast();
-    changeAnimationDirection("forwards");
     resumeAnimation();
   }
 
   function scrollToPrev() {
     pauseAnimation();
     moveLastToFirst();
-    changeAnimationDirection("reverse");
     resumeAnimation();
   }
 

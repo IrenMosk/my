@@ -27,7 +27,7 @@
   &__list {
     display: flex;
     gap: var(--gap);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s linear;
     will-change: transform;
     width: calc(18 * (var(--item-width) + var(--gap)));
     flex-wrap: nowrap;
