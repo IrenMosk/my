@@ -23,15 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function scrollToNext() {
-    pauseAnimation();
+    // pauseAnimation();
     moveFirstToLast();
-    resumeAnimation();
+    // resumeAnimation();
   }
 
   function scrollToPrev() {
-    pauseAnimation();
+    // pauseAnimation();
     moveLastToFirst();
-    resumeAnimation();
+    // resumeAnimation();
   }
 
   btnNext.addEventListener("click", scrollToNext);

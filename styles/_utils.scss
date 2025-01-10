@@ -165,6 +165,7 @@
       z-index: 0;
       top: 0;
       left: 19px;
+      line-height: 1.6;
     }
   }
   @include desktop-above {
@@ -255,7 +256,7 @@
     left: 55%;
   }
 }
-@include tablet {
+@include mobile {
   .observe-video[data-visible="true"] {
     opacity: 1;
   }

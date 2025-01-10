@@ -415,6 +415,7 @@ svg * {
     z-index: 0;
     top: 0;
     left: 19px;
+    line-height: 1.6;
   }
 }
 @media (min-width: 1920px) {
@@ -520,7 +521,7 @@ svg * {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .observe-video[data-visible=true] {
     opacity: 1;
   }
@@ -1193,17 +1194,9 @@ h4,
 .marquee__list {
   display: flex;
   gap: var(--gap);
-  transition: transform 0.3s linear;
-  will-change: transform;
   width: calc(18 * (var(--item-width) + var(--gap)));
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 80s) var(--_animation-direction, forwards) linear infinite;
-}
-.marquee__list[data-animation=paused] {
-  animation-play-state: paused;
-}
-.marquee__list[data-animation=running] {
-  animation-play-state: running;
+  animation: scroll 100s linear infinite;
 }
 .marquee__item {
   position: relative;
